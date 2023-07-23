@@ -1,153 +1,466 @@
-<html>
-<head>
-<style>
-<style media="all" type="text/css">
-body,html{
-    width:100%;
-    height:100%
-}
-body{
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    font-family:DM Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-    font-size:1em;
-    font-weight:400;
-    line-height:1.5;
-    color:var(--primary-text-color);
-    background-color:var(--background-color);
-    perspective:1000px;
-    perspective-origin:50% 100px;
-    transition:perspective .5s ease;
-	
-}
-h1,h2{
-    letter-spacing:-.025em;
-    font-weight:700;
-	font-size: 1em;
-}
-h2{
-    margin-bottom:.25rem;
-	font-weight: 400 !important;
-}
-p{
-    margin-bottom:1rem
-}
-a,span,ul{
-    color:var(--link-text-color)
-}
-p,span,ul{
-    color:var(--secondary-text-color)
-}
-li{
-    margin-left:1.5rem
-}
-main{
-    position:relative;
-    margin:3rem 2rem 2rem;
-    height:100%
-}
-canvas{
-    display:none
-}
-article,header{
-    margin-bottom:3rem
-}
-img{
-    background-color:var(--primary-text-color);
-    width:100%;
-    max-width:120px;
-    margin-bottom:2rem
-}
-footer{
-    font-size:.75rem;
-    margin-bottom:4rem
-}
-#information{
-    position:absolute
-}
-#projects ul li{
-    margin-bottom:1.5rem
-}
-@media screen and (min-width:32rem){
-    body{
-        font-size:1.5rem
-    }
-    h2{
-        margin-bottom:1rem
-    }
-    main{
-        margin:6rem 5rem 5rem;
-        max-width:32rem
-    }
-    article,footer,header{
-        margin-bottom:5rem
-    }
-    img{
-        background-color:var(--primary-text-color);
-        max-width:180px;
-        margin-bottom:4rem
-    }
-    footer{
-        font-size:1rem
-    }
-}
-a {
-	color: grey;
-}
-</style>
-  <script src="https://unpkg.com/feather-icons"></script>
-<title>Kyle Scheer's Website</title>
- <meta charset="UTF-8">
-  <meta name="description" content="Kyle Scheer's website">
-  <meta name="keywords" content="website, kyle, scheer, cedar rapids">
-  <meta name="author" content="Kyle Scheer">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-	<main>
-	
-<div class="container">
-<!--
-<h1 style="font-size:2em">Hello world!</h1>
-<h1>I'm Kyle's Website.</h1>
-<p>
-Kyle said I was an <i>experimental</i> website, whatever that means. I just hope I do a good job!
-<br><br>
-Not to brag, but Kyle has gone to school AND had a job. And to think all I've ever done is sit in a random data server my whole life. You should definitely check out more about his education and work experience <a href="https://www.linkedin.com/in/kyletscheer/" target="_blank">here.</a>
-<br><br>
-Kyle asked me to tell you about some of the stuff he's working on:
-<h1>Kyle's writing:</h1>
-<i>2022</i>
-<ul>
-<li><a href="https://medium.com/@kyletscheer/the-other-rubber-band-habit-trick-b11aca412c83" target="_blank">The (other) rubber band habit trick</a></li>
-<li><a href="https://medium.com/@kyletscheer/the-ethical-flexitarian-b05c85147908" target="_blank">The ethical flexitarian</a></li>
-<li><a href="https://medium.com/@kyletscheer/simplify-your-finances-using-the-bucket-system-312359e120d6" target="_blank">It's time to put your money on autopilot</a></li>
-<li><a href="https://medium.com/@kyletscheer/distributing-an-estate-or-anything-equitably-a-formula-9e3f37b1fa39" target="_blank">Distributing an estate equitably</a></li>
-<li><a href="https://medium.com/@kyletscheer/the-philosophy-of-about-time-mans-search-for-meaning-730e04105322" target="_blank">The philosophy of About Time and Man's Search for Meaning</a></li>
-<li><a href="https://medium.com/@kyletscheer/on-creating-a-tree-of-knowledge-f099c1028bf6" target="_blank">On creating a tree of knowledge</a></li>
-</ul>
-<br>
-<i>2020</i>
-<ul>
-<li><a href="https://medium.com/@kyletscheer/270-game-ultimate-strategy-guide-get-to-538-every-time-31a1cada5af0" target="_blank">270 Game ultimate strategy guide</a></li>
-</ul>
-<br>
-<i>2017</i>
-<ul>
-<li><a href="https://medium.com/@kyletscheer/getting-a-random-tweet-using-the-twitter-search-api-and-php-c7546c8fa080" target="_blank">Getting a random tweet using the Twitter Search API and PHP</a></li>
-<li><a href="https://medium.com/@kyletscheer/a-trip-to-europe-advice-and-experience-d47e6437800e" target="_blank">A trip to Europe: advice and experience</a></li>
-</ul>
-<br>
-Kyle only saves the best stuff for me. If you want to check out all of his work, click some of the links below (but just know I'll miss you): 
--->
-<h1>Kyle Scheer</h1>
-<h2>Learn more below.</h2>
-<a href="https://github.com/kyletscheer" target="_blank">Github</a>
-<br><a href="https://kyletscheer.medium.com/" target="_blank">Medium</a>
-<br><a href="https://www.linkedin.com/in/kyletscheer/" target="_blank">Linkedin</a>
-<br><a href="mailto:hi@kylescheer.com">hi@kylescheer.com</a>
-<br><br>
-</p>
-</main>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kyle Scheer</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kyle Scheer's Website" />
+    <meta name="keywords" content="website, kyle, scheer, cedar rapids" />
+    <meta name="author" content="Kyle Scheer" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/016db943e9.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link href="style.css" rel="stylesheet" />
+    <script>
+      function toggleDarkMode() {
+        const darkModeToggle = document.querySelector(".dark-mode-toggle");
+        document.body.classList.toggle("dark-mode");
+        darkModeToggle.classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <h1>Kyle Scheer</h1>
+      <p>This is my collection of stuff.</p>
+      <hr class="hr-rule" />
+
+      <div class="timeline">
+        <div class="timeline-item blog sort">
+          <span class="timeline-item-date">Jul, 2023</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Elo Rankings Generator</h3>
+            <p class="timeline-item-description">
+              Pairwise decision-making, generated based on user input. Life
+              priorities example page.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/pairwise"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-sort"></i> Generator
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/pairwise"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog calendar">
+          <span class="timeline-item-date">Jun, 2023</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Historicle</h3>
+            <p class="timeline-item-description">
+              A Wordle knockoff using dates from history.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/historicle"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-calendar"></i> Play
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/historicle"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog translate">
+          <span class="timeline-item-date">Apr, 2023</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Timor Numbers Translator</h3>
+            <p class="timeline-item-description">
+              Put in a number. Get the results in Tetun, Portuguese, Bahasa, and
+              Tokodede, some of the main languages in Timor-Leste.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/timor_numbers"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-language"></i> Translator
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/timor_numbers"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog toilet-paper">
+          <span class="timeline-item-date">Jul, 2022</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">The Toilet Paper Problem</h3>
+            <p class="timeline-item-description">
+              Toilet paper can be deceptive. How much have you really used?
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://medium.com/@kyletscheer/your-toilet-paper-is-lying-to-you-c7a360fecacc"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/toilet-paper"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-toilet-paper"></i> Calculator
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/toilet-paper"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog money">
+          <span class="timeline-item-date">Mar, 2022</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">
+              Estate Equitable Distribution Equations
+            </h3>
+            <p class="timeline-item-description">
+              How can we distribute an estate in an equitable way, using just an
+              equation?
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://medium.com/@kyletscheer/distributing-an-estate-or-anything-equitably-a-formula-9e3f37b1fa39"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/equitable-distribution"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-money"></i> Distribute
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/equitable-distribution"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog tree-branch">
+          <span class="timeline-item-date">Jan, 2022</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Creating a Tree of Knowledge</h3>
+            <p class="timeline-item-description">
+              Visualizing Wikipedia's list of academic disciplines, to help
+              answer the question: "What don't I know?".
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://medium.com/@kyletscheer/on-creating-a-tree-of-knowledge-f099c1028bf6"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/academic-disciplines"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Files
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog lightning">
+          <span class="timeline-item-date">Dec, 2021</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">
+              Harry Potter Stats and Random Chapter Generator
+            </h3>
+            <p class="timeline-item-description">
+              Some charts analyzing the Harry Potter books, and also a random
+              chapter generator for the books
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/harry_potter_stats"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-bolt"></i> See the Stats
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/harry_potter_stats"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog math">
+          <span class="timeline-item-date">Aug, 2021</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">The Numbers Game</h3>
+            <p class="timeline-item-description">
+              Get some digits. Put in some symbols. Complete the equation.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/numbers_game"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-plus"></i> Play
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/numbers_game"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog alphabet">
+          <span class="timeline-item-date">Jul, 2021</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Letters and Words</h3>
+            <p class="timeline-item-description">
+              Some random tools where I play with letters and words.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/letters"
+                rel="noopener"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-font"></i> Tools
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/letters"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog upward-graph">
+          <span class="timeline-item-date">Mar, 2021</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">Automate Your Finances</h3>
+            <p class="timeline-item-description">
+              A simpler way to handle your money.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://medium.com/@kyletscheer/simplify-your-finances-using-the-bucket-system-312359e120d6"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog election">
+          <span class="timeline-item-date">Nov, 2020</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">270 Game Guide</h3>
+            <p class="timeline-item-description">
+              A far too in-depth guide on the 270 election game.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://medium.com/@kyletscheer/270-game-ultimate-strategy-guide-get-to-538-every-time-31a1cada5af0"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://youtu.be/YSe1bn4IUxs"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa-brands fa-youtube"></i> Video
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog twitter">
+          <span class="timeline-item-date">Dec, 2017</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">
+              Getting a Random Tweet (non-functional)
+            </h3>
+            <p class="timeline-item-description">
+              Project to get a random tweet based on a keyword using the Twitter
+              API. No longer functional (thanks, Elon).
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://kyletscheer.medium.com/getting-a-random-tweet-using-the-twitter-search-api-and-php-c7546c8fa080"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-medium"></i> Blog
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/Random-Tweet"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item blog dice">
+          <span class="timeline-item-date">Jul, 2016</span>
+          <div class="timeline-item-content">
+            <h3 class="timeline-item-title">
+              Event Combination Probability Calculator
+            </h3>
+            <p class="timeline-item-description">
+              A tool to find the theoretical (and experimental) probability of
+              different combinations of independent events occurring.
+            </p>
+            <div class="timeline-item-link">
+              <a
+                href="https://www.kylescheer.com/probability"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-dice"></i> Calculator
+              </a>
+            </div>
+            <div class="timeline-item-link">
+              <a
+                href="https://github.com/kyletscheer/probability"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fa fa-github"></i> Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/kyletscheer/"
+            target="_blank"
+            rel="noopener"
+            rel="noopener"
+            title="LinkedIn"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com/kyletscheer"
+            target="_blank"
+            rel="noopener"
+            rel="noopener"
+            title="GitHub"
+            ><i class="fa fa-github"></i
+          ></a>
+          <a
+            href="https://kyletscheer.medium.com/"
+            target="_blank"
+            rel="noopener"
+            rel="noopener"
+            title="Medium"
+            ><i class="fa fa-medium"></i
+          ></a>
+        </div>
+
+        <p id="copy">
+          &copy; 2023 Kyle Scheer.
+          <a
+            href="https://github.com/kyletscheer/kyletscheer.github.io"
+            target="_blank"
+            rel="noopener"
+            rel="noopener"
+            title="GitHub Code"
+          >
+            Free to use.</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+      <i class="fa fa-adjust"></i>
+    </div>
+  </body>
 </html>
