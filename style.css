@@ -254,3 +254,9 @@ p {
 .dice::before {
   content: "\f522";
 }
+.microlet::before {
+	content: "\f207";
+}
+.numbers::before {
+	content: "\f0cb";
+}
