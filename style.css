@@ -264,3 +264,7 @@ p {
 .numbers::before {
 	content: "\f0cb";
 }
+.weekdays::before {
+	content: "\f073";
+}
+
