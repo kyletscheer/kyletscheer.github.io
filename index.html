@@ -1,552 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8P48QH6899"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8P48QH6899"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-8P48QH6899');
-</script>
-    <title>Kyle Scheer</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kyle Scheer's Website" />
-    <meta name="keywords" content="website, kyle, scheer, cedar rapids" />
-    <meta name="author" content="Kyle Scheer" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/016db943e9.js"
-      crossorigin="anonymous"
-    ></script>
+    gtag('config', 'G-8P48QH6899');
+  </script>
+  <title>Kyle Scheer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kyle Scheer's Website" />
+  <meta name="keywords" content="website, kyle, scheer, cedar rapids" />
+  <meta name="author" content="Kyle Scheer" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
+  " rel="stylesheet">
+  <script src="https://kit.fontawesome.com/016db943e9.js" crossorigin="anonymous"></script>
 
-    <link
-      href="https://use.fontawesome.com/releases/v5.0.1/css/all.css"
-      rel="stylesheet"
-    />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+    rel="stylesheet">
 
-    <link href="style.css" rel="stylesheet" />
-    <script>
-      function toggleDarkMode() {
-        const darkModeToggle = document.querySelector(".dark-mode-toggle");
-        document.body.classList.toggle("dark-mode");
-        darkModeToggle.classList.toggle("active");
-      }
-    </script>
-  </head>
-  <body class="dark-mode">
-    <div class="container">
-      <h1>Kyle Scheer</h1>
-      <p>Welcome to my website, which serves as an archive of some random projects I've had over the years.</p>
-      <p>Learn more about <a href="https://www.linkedin.com/in/kyletscheer/" target="_blank">my work</a>, read <a href="https://kyletscheer.medium.com/"
-        target="_blank">my writings</a>, or check out <a href="https://github.com/kyletscheer"
-        target="_blank">my code</a>.
+  <link href="style.css" rel="stylesheet" />
+  <script>
+    function toggleDarkMode() {
+      const darkModeToggle = document.querySelector(".dark-mode-toggle");
+      document.body.classList.toggle("dark-mode");
+      darkModeToggle.classList.toggle("active");
+    }
+    // Show the button when scrolled down 100px from the top
+window.onscroll = function() {
+    let backToTopButton = document.getElementById("backToTop");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+  </script>
+</head>
+
+<body class="dark-mode">
+  <div class="container">
+    <div id="intro">
+      <img src="images/kyle.jpg" style="border-radius: 1000px" height="250px" width="250px">
+      <br><br>
+      <h1><u>Kyle Scheer</u></h1>
+      <p>Welcome to my website. Here you can <a href="#about">learn about me</a>, some of the <a href="#services">work I
+          do</a>, and some of my <a href="#projects">random projects</a>.
+      </p><br>
+      <p>Find me elsewhere online on <a href="https://www.linkedin.com/in/kyletscheer/" target="_blank">Linkedin</a>,
+        read <a href="https://kyletscheer.medium.com/" target="_blank">my blog</a>, or check out <a
+          href="https://github.com/kyletscheer" target="_blank">my code</a>.
       </p>
-      <hr class="hr-rule" />
+    </div>
+    <hr class="hr-rule" />
+    <!-- About Section -->
+    <div id="about" class="py-5">
+      <h1 class="text-center mb-5">About Me</h1>
+      <p>I'm currently living in Timor-Leste, working as a Community and Economic Development Coordinator with the <a
+          href="https://www.peacecorps.gov" target="_blank">U.S. Peace Corps</a>. When I’m not on the job, I <a
+          href="#testimonials">help people</a> with their <a href="#services">various technology needs</a> and offer
+        tutoring in English and GRE exam prep.</p>
+      <p>I’m passionate about community development and always looking for opportunities to make a difference and learn
+        about new cultures. I'm hoping to continue my journey by getting more deeply involved in international
+        development.</p>
+      <p>In my free time, I love diving into <a href="#projects">random projects</a> that fuel my creativity and make
+        people look at the everyday in a new way.</p>
+      <p>If you’d like to get in touch or discuss a potential project, feel free to reach out through my email - <i>hi
+          [at] kylescheer [dot] com</i>.</p>
+
+    </div>
+    <hr class="hr-rule" />
+    <!-- Services Section -->
+    <div id="services" class="py-5">
+      <h1 class="text-center mb-5">My Services</h1>
+      <div class="row">
+        <!-- Online Presence Services -->
+        <div class="col-md-6">
+          <h3>Online Presence Services</h3>
+          <p>I can help you or your organization establish a strong online presence. Whether you need a new website,
+            social media management, or SEO, I’m here to bring your vision to life and connect you with your audience.
+          </p>
+          <ul>
+            <li>Website Design (including online stores)</li>
+            <li>Social Media Creation & Management</li>
+            <li>Search Engine Optimization (SEO)</li>
+            <li>Marketing and Customer Support</li>
+          </ul>
+          <h5>Some Recent Projects:</h5>
+          <ul>
+            <li>Website for a nonprofit consulting company</li>
+            <li>Social media and website consultation for a political campaign</li>
+            <li>Website and SEO for an apartment complex</li>
+            <li>Website and social media creation for a farmstead</li>
+          </ul>
+        </div>
+
+        <!-- Tech Solutions & Digital Systems -->
+        <div class="col-md-6">
+          <h3>Tech Solutions & Digital Systems</h3>
+          <p>Need guidance on improving your technology setup? I evaluate your systems, align them with your mission,
+            and recommend enhancements that make a difference.</p>
+          <ul>
+            <li>Marketing and Customer Support Systems</li>
+            <li>Digital Product Development</li>
+            <li>Document Management Systems</li>
+            <li>Team Collaboration Software</li>
+            <li>Data Collection & Analysis</li>
+            <li>Hardware & Software Upgrades</li>
+          </ul>
+          <h5>Some Recent Projects:</h5>
+          <ul>
+            <li>Database guidance to a national sports association</li>
+            <li>Inventory management system revision for a community garden and cafe</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <!-- Personal Tech Support -->
+        <div class="col-md-12">
+          <h3>Personal Tech Support</h3>
+          <p>Technology doesn’t have to be intimidating. I help people (especially older individuals) understand and use
+            technology without the frustration. Whether it’s setting up a new device or troubleshooting issues, I offer
+            simple, easy-to-understand solutions.</p>
+          <ul>
+            <li>Device Setup (printers, tablets, phones)</li>
+            <li>Internet Troubleshooting</li>
+            <li>Social Media Account Setup & Navigation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-rule" />
+    <div class="testimonials" id="testimonials">
+      <div class="testimonial-carousel">
+        <h2>What People Are Saying</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="5000">
+              <div class="testimonial-item">
+                "Kyle was a great asset to my campaign. He was so adept at managing our presence through our website
+                and on social media. In challenging times his outreach made all the difference in keeping people up to
+                date and engaged."
+                <div class="testimonial-author">- Linda L.</div>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+              <div class="testimonial-item">
+                "Working with Kyle was a great experience! He helped me translate my ideas into a highly functional
+                and visually pleasing website. He took the time not only to build my website but also to provide me
+                with instruction and coaching so that I could do some updating myself."
+                <div class="testimonial-author">- Leslie J.</div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                "Kyle has worked with me in various capacities for projects in our professional business as well as
+                our personal business. I found him to be very reliable, professional, knowledgeable and pleasant."
+                <div class="testimonial-author">- Fern F.</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                "With technology always changing, I use Kyle to listen, educate, and fix my complaints. I have written
+                notes for myself and find myself calling him to return. He is a professional, polite, and makes sure you
+                are completely satisfied by calling you! His rates are very reasonable! You can be sure he can and will
+                make sure you understand! I highly recommend the technical polite, efficient service he provides."
+                <div class="testimonial-author">- Vicki S.</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                "Kyle did a great job for me. Got a couple of security cameras going, got my printer working, and other
+                things on my phone working better."
+                <div class="testimonial-author">- Bruce C.</div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                "Kyle did a fantastic job resolving issues with our Smart TV and connected devices. He was very flexible
+                on appt times and resolved the issue very quickly."
+                <div class="testimonial-author">- Kelle Z.</div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <hr class="hr-rule" />
+    <div id="projects">
+      <h1>Projects</h1>
 
       <div class="timeline">
-		<div class="timeline-item blog weekdays">
+        <div class="row timeline-item blog weekdays">
           <span class="timeline-item-date">Oct, 2024</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">Weekday from a date</h3>
             <p class="timeline-item-description">
               Find the weekday from a given date. Explainer, calculator, and 5-minute test.
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://kylescheer.com/weekdays/"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://kylescheer.com/weekdays/" target="_blank" rel="noopener">
                 <i class="fa fa-calendar"></i> Monday?
               </a>
             </div>
-			<div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/weekdays"
-                target="_blank"
-                rel="noopener"
-              >
+            <div class="timeline-item-link">
+              <a href="https://github.com/kyletscheer/weekdays" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://kylescheer.com/weekdays/" target="_blank" rel="noopener">
+              <img src="images/weekdays.png" height="250px" width="250px"
+                alt="Screenshot of the Weekday from a Date calculator">
+            </a>
+          </div>
         </div>
-		<div class="timeline-item blog numbers">
+        <hr class="hr-rule" />
+
+        <div class="row timeline-item blog numbers">
           <span class="timeline-item-date">May, 2024</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">Timor Numbers</h3>
             <p class="timeline-item-description">
               Write out numbers in the various languages of Timor-Leste.
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://kylescheer.com/timor_numbers/"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://kylescheer.com/timor_numbers/" target="_blank" rel="noopener">
                 <i class="fa fa-list-ol"></i> Get Numbers
               </a>
             </div>
-			<div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/timor_numbers"
-                target="_blank"
-                rel="noopener"
-              >
+            <div class="timeline-item-link">
+              <a href="https://github.com/kyletscheer/timor_numbers" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://kylescheer.com/timor_numbers/" target="_blank" rel="noopener">
+              <img src="images/timor_numbers.png" height="250px" width="250px"
+                alt="Screenshot of the Timor Numbers webpage">
+            </a>
+          </div>
         </div>
-	  <hr class="hr-rule" />
-		<div class="timeline-item blog microlet">
+        <hr class="hr-rule" />
+
+        <div class="row timeline-item blog microlet">
           <span class="timeline-item-date">Jan, 2024</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">Updated Dili Microlet Routes</h3>
             <p class="timeline-item-description">
-              Helped update the Dili Microlet Routes website
+              Helped update the Dili Microlet Routes website.
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://dilimicroletroutes.github.io/"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://dilimicroletroutes.github.io/" target="_blank" rel="noopener">
                 <i class="fa fa-bus"></i> Navigate
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://dilimicroletroutes.github.io/" target="_blank" rel="noopener">
+              <img src="images/microlets.png" height="250px" width="250px"
+                alt="Screenshot of the Dili Microlet Routes webpage">
+            </a>
+          </div>
         </div>
-			  <hr class="hr-rule" />
+        <hr class="hr-rule" />
 
-        <div class="timeline-item blog sort">
+        <div class="row timeline-item blog sort">
           <span class="timeline-item-date">Jul, 2023</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">Elo Rankings Generator</h3>
             <p class="timeline-item-description">
-              Pairwise decision-making, generated based on user input. Life
-              priorities example page.
+              Pairwise decision-making, generated based on user input. Life priorities example page.
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/pairwise"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://www.kylescheer.com/pairwise" target="_blank" rel="noopener">
                 <i class="fa fa-sort"></i> Generator
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/pairwise"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/kyletscheer/pairwise" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://www.kylescheer.com/pairwise" target="_blank" rel="noopener">
+              <img src="images/elo.png" height="250px" width="250px" alt="Screenshot of the Elo Rankings Generator">
+            </a>
+          </div>
         </div>
-			  <hr class="hr-rule" />
+        <hr class="hr-rule" />
 
-        <div class="timeline-item blog calendar">
+        <div class="row timeline-item blog calendar">
           <span class="timeline-item-date">Jun, 2023</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">Historicle</h3>
             <p class="timeline-item-description">
               A Wordle knockoff using dates from history.
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/historicle"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://www.kylescheer.com/historicle" target="_blank" rel="noopener">
                 <i class="fa fa-calendar"></i> Play
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/historicle"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/kyletscheer/historicle" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://www.kylescheer.com/historicle" target="_blank" rel="noopener">
+              <img src="images/historicle.png" height="250px" width="250px" alt="Screenshot of the Historicle game">
+            </a>
+          </div>
         </div>
-			  <hr class="hr-rule" />
+        <hr class="hr-rule" />
 
-        <div class="timeline-item blog toilet-paper">
+        <div class="row timeline-item blog toilet-paper">
           <span class="timeline-item-date">Jul, 2022</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">The Toilet Paper Problem</h3>
             <p class="timeline-item-description">
               Toilet paper can be deceptive. How much have you really used?
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://medium.com/@kyletscheer/your-toilet-paper-is-lying-to-you-c7a360fecacc"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://medium.com/@kyletscheer/your-toilet-paper-is-lying-to-you-c7a360fecacc" target="_blank"
+                rel="noopener">
                 <i class="fa fa-medium"></i> Blog
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/toilet-paper"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://www.kylescheer.com/toilet-paper" target="_blank" rel="noopener">
                 <i class="fa fa-toilet-paper"></i> Calculator
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/toilet-paper"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/kyletscheer/toilet-paper" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
+          <div class="col-md-6">
+            <a href="https://www.kylescheer.com/toilet-paper" target="_blank" rel="noopener">
+              <img src="images/toilet.png" height="250px" width="250px"
+                alt="Screenshot of the Toilet Paper Problem calculator">
+            </a>
+          </div>
         </div>
-			  <hr class="hr-rule" />
+        <hr class="hr-rule" />
 
-        <div class="timeline-item blog money">
+        <div class="row timeline-item blog money">
           <span class="timeline-item-date">Mar, 2022</span>
-          <div class="timeline-item-content">
+          <div class="col-md-6 timeline-item-content">
             <h3 class="timeline-item-title">
               Estate Equitable Distribution Equations
             </h3>
             <p class="timeline-item-description">
-              How can we distribute an estate in an equitable way, using just an
-              equation?
+              How can we distribute an estate in an equitable way, using just an equation?
             </p>
             <div class="timeline-item-link">
-              <a
-                href="https://medium.com/@kyletscheer/distributing-an-estate-or-anything-equitably-a-formula-9e3f37b1fa39"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://medium.com/@kyletscheer/distributing-an-estate-or-anything-equitably-a-formula-9e3f37b1fa39"
+                target="_blank" rel="noopener">
                 <i class="fa fa-medium"></i> Blog
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/equitable-distribution"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://www.kylescheer.com/equitable-distribution" target="_blank" rel="noopener">
                 <i class="fa fa-money"></i> Distribute
               </a>
             </div>
             <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/equitable-distribution"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://github.com/kyletscheer/equitable-distribution" target="_blank" rel="noopener">
                 <i class="fa fa-github"></i> Code
               </a>
             </div>
           </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog tree-branch">
-          <span class="timeline-item-date">Jan, 2022</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">Creating a Tree of Knowledge</h3>
-            <p class="timeline-item-description">
-              Visualizing Wikipedia's list of academic disciplines, to help
-              answer the question: "What don't I know?".
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://medium.com/@kyletscheer/on-creating-a-tree-of-knowledge-f099c1028bf6"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-medium"></i> Blog
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/academic-disciplines"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Files
-              </a>
-            </div>
+          <div class="col-md-6">
+            <a href="https://www.kylescheer.com/equitable-distribution" target="_blank" rel="noopener">
+              <img src="images/estate.png" height="250px" width="250px"
+                alt="Screenshot of the Equitable Distribution calculator">
+            </a>
           </div>
         </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog lightning">
-          <span class="timeline-item-date">Dec, 2021</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">
-              Harry Potter Stats and Random Chapter Generator
-            </h3>
-            <p class="timeline-item-description">
-              Some charts analyzing the Harry Potter books, and also a random
-              chapter generator for the books
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/harry_potter_stats"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-bolt"></i> See the Stats
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/harry_potter_stats"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Code
-              </a>
-            </div>
+      <hr class="hr-rule" />
+      <div class="row timeline-item blog tree-branch">
+        <span class="timeline-item-date">Jan, 2022</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">Creating a Tree of Knowledge</h3>
+          <p class="timeline-item-description">
+            Visualizing Wikipedia's list of academic disciplines, to help answer the question: "What don't I know?".
+          </p>
+          <div class="timeline-item-link">
+            <a href="https://medium.com/@kyletscheer/on-creating-a-tree-of-knowledge-f099c1028bf6" target="_blank"
+              rel="noopener">
+              <i class="fa fa-medium"></i> Blog
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://github.com/kyletscheer/academic-disciplines" target="_blank" rel="noopener">
+              <i class="fa fa-github"></i> Files
+            </a>
           </div>
         </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog math">
-          <span class="timeline-item-date">Aug, 2021</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">The Numbers Game</h3>
-            <p class="timeline-item-description">
-              Get some digits. Put in some symbols. Complete the equation.
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/numbers_game"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-plus"></i> Play
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/numbers_game"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog alphabet">
-          <span class="timeline-item-date">Jul, 2021</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">Letters and Words</h3>
-            <p class="timeline-item-description">
-              Some random tools where I play with letters and words.
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/letters"
-                rel="noopener"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-font"></i> Tools
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/letters"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog upward-graph">
-          <span class="timeline-item-date">Mar, 2021</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">Automate Your Finances</h3>
-            <p class="timeline-item-description">
-              A simpler way to handle your money.
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://medium.com/@kyletscheer/simplify-your-finances-using-the-bucket-system-312359e120d6"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-medium"></i> Blog
-              </a>
-            </div>
-          </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog election">
-          <span class="timeline-item-date">Nov, 2020</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">270 Game Guide</h3>
-            <p class="timeline-item-description">
-              A far too in-depth guide on the 270 election game.
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://medium.com/@kyletscheer/270-game-ultimate-strategy-guide-get-to-538-every-time-31a1cada5af0"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-medium"></i> Blog
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://youtu.be/YSe1bn4IUxs"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa-brands fa-youtube"></i> Video
-              </a>
-            </div>
-          </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog twitter">
-          <span class="timeline-item-date">Dec, 2017</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">
-              Getting a Random Tweet (non-functional)
-            </h3>
-            <p class="timeline-item-description">
-              Project to get a random tweet based on a keyword using the Twitter
-              API. No longer functional (thanks, Elon).
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://kyletscheer.medium.com/getting-a-random-tweet-using-the-twitter-search-api-and-php-c7546c8fa080"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-medium"></i> Blog
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/Random-Tweet"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Code
-              </a>
-            </div>
-          </div>
-        </div>
-			  <hr class="hr-rule" />
-
-        <div class="timeline-item blog dice">
-          <span class="timeline-item-date">Jul, 2016</span>
-          <div class="timeline-item-content">
-            <h3 class="timeline-item-title">
-              Event Combination Probability Calculator
-            </h3>
-            <p class="timeline-item-description">
-              A tool to find the theoretical (and experimental) probability of
-              different combinations of independent events occurring.
-            </p>
-            <div class="timeline-item-link">
-              <a
-                href="https://www.kylescheer.com/probability"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-dice"></i> Calculator
-              </a>
-            </div>
-            <div class="timeline-item-link">
-              <a
-                href="https://github.com/kyletscheer/probability"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa fa-github"></i> Code
-              </a>
-            </div>
-          </div>
+        <div class="col-md-6">
+          <a href="https://medium.com/@kyletscheer/on-creating-a-tree-of-knowledge-f099c1028bf6" target="_blank"
+            rel="noopener">
+            <img src="images/tree.png" height="250px" width="250px"
+              alt="Visualization of a tree representing academic disciplines">
+          </a>
         </div>
       </div>
-	  <hr class="hr-rule" />
+      <hr class="hr-rule" />
 
-      <div class="footer">
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/kyletscheer/"
-            target="_blank"
-            rel="noopener"
-            rel="noopener"
-            title="LinkedIn"
-            ><i class="fa fa-linkedin"></i
-          ></a>
-          <a
-            href="https://github.com/kyletscheer"
-            target="_blank"
-            rel="noopener"
-            rel="noopener"
-            title="GitHub"
-            ><i class="fa fa-github"></i
-          ></a>
-          <a
-            href="https://kyletscheer.medium.com/"
-            target="_blank"
-            rel="noopener"
-            rel="noopener"
-            title="Medium"
-            ><i class="fa fa-medium"></i
-          ></a>
+      <div class="row timeline-item blog lightning">
+        <span class="timeline-item-date">Dec, 2021</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">Harry Potter Stats and Random Chapter Generator</h3>
+          <p class="timeline-item-description">
+            Some charts analyzing the Harry Potter books, and also a random chapter generator for the books.
+          </p>
+          <div class="timeline-item-link">
+            <a href="https://www.kylescheer.com/harry_potter_stats" target="_blank" rel="noopener">
+              <i class="fa fa-bolt"></i> See the Stats
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://github.com/kyletscheer/harry_potter_stats" target="_blank" rel="noopener">
+              <i class="fa fa-github"></i> Code
+            </a>
+          </div>
         </div>
-
-        <p id="copy">
-          &copy; 2023 Kyle Scheer.
-          <a
-            href="https://github.com/kyletscheer/kyletscheer.github.io"
-            target="_blank"
-            rel="noopener"
-            rel="noopener"
-            title="GitHub Code"
-          >
-            Free to use.</a
-          >
-        </p>
+        <div class="col-md-6">
+          <a href="https://www.kylescheer.com/harry_potter_stats" target="_blank" rel="noopener">
+            <img src="images/harry.png" height="250px" width="250px"
+              alt="Charts and random chapter generator for Harry Potter books">
+          </a>
+        </div>
       </div>
-    </div>
+      <hr class="hr-rule" />
 
-    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
-      <i class="fa fa-adjust"></i>
+      <div class="row timeline-item blog math">
+        <span class="timeline-item-date">Aug, 2021</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">The Numbers Game</h3>
+          <p class="timeline-item-description">Get some digits. Put in some symbols. Complete the equation.</p>
+          <div class="timeline-item-link">
+            <a href="https://www.kylescheer.com/numbers_game" target="_blank" rel="noopener">
+              <i class="fa fa-plus"></i> Play
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://github.com/kyletscheer/numbers_game" target="_blank" rel="noopener">
+              <i class="fa fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <a href="https://www.kylescheer.com/numbers_game" target="_blank" rel="noopener">
+            <img src="images/numbers.png" height="250px" width="250px"
+              alt="The Numbers Game interface with digits and symbols">
+          </a>
+        </div>
+      </div>
+      <hr class="hr-rule" />
+
+      <div class="row timeline-item blog alphabet">
+        <span class="timeline-item-date">Jul, 2021</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">Letters and Words</h3>
+          <p class="timeline-item-description">Some random tools where I play with letters and words.</p>
+          <div class="timeline-item-link">
+            <a href="https://www.kylescheer.com/letters" target="_blank" rel="noopener">
+              <i class="fa fa-font"></i> Tools
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://github.com/kyletscheer/letters" target="_blank" rel="noopener">
+              <i class="fa fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <a href="https://www.kylescheer.com/letters" target="_blank" rel="noopener">
+            <img src="images/letter.png" height="250px" width="250px"
+              alt="Interface for tools that play with letters and words">
+          </a>
+        </div>
+      </div>
+      <hr class="hr-rule" />
+
+      <div class="row timeline-item blog upward-graph">
+        <span class="timeline-item-date">Mar, 2021</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">Automate Your Finances</h3>
+          <p class="timeline-item-description">A simpler way to handle your money.</p>
+          <div class="timeline-item-link">
+            <a href="https://medium.com/@kyletscheer/simplify-your-finances-using-the-bucket-system-312359e120d6"
+              target="_blank" rel="noopener">
+              <i class="fa fa-medium"></i> Blog
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <a href="https://medium.com/@kyletscheer/simplify-your-finances-using-the-bucket-system-312359e120d6"
+            target="_blank" rel="noopener">
+            <img src="images/bucket.png" height="250px" width="250px" alt="Simplified bucket system for finances">
+          </a>
+        </div>
+      </div>
+      <hr class="hr-rule" />
+
+      <div class="row timeline-item blog election">
+        <span class="timeline-item-date">Nov, 2020</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">270 Game Guide</h3>
+          <p class="timeline-item-description">A far too in-depth guide on the 270 election game.</p>
+          <div class="timeline-item-link">
+            <a href="https://medium.com/@kyletscheer/270-game-ultimate-strategy-guide-get-to-538-every-time-31a1cada5af0"
+              target="_blank" rel="noopener">
+              <i class="fa fa-medium"></i> Blog
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://youtu.be/YSe1bn4IUxs" target="_blank" rel="noopener">
+              <i class="fa-brands fa-youtube"></i> Video
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <a href="https://medium.com/@kyletscheer/270-game-ultimate-strategy-guide-get-to-538-every-time-31a1cada5af0"
+            target="_blank" rel="noopener">
+            <img src="images/270.png" height="250px" width="250px" alt="Guide to playing the 270 election game">
+          </a>
+        </div>
+      </div>
+      <hr class="hr-rule" />
+
+      <div class="row timeline-item blog dice">
+        <span class="timeline-item-date">Jul, 2016</span>
+        <div class="col-md-6 timeline-item-content">
+          <h3 class="timeline-item-title">Event Combination Probability Calculator</h3>
+          <p class="timeline-item-description">A tool to find the theoretical (and experimental) probability of
+            different combinations of independent events occurring.</p>
+          <div class="timeline-item-link">
+            <a href="https://www.kylescheer.com/probability" target="_blank" rel="noopener">
+              <i class="fa fa-dice"></i> Calculator
+            </a>
+          </div>
+          <div class="timeline-item-link">
+            <a href="https://github.com/kyletscheer/probability" target="_blank" rel="noopener">
+              <i class="fa fa-github"></i> Code
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <a href="https://www.kylescheer.com/probability" target="_blank" rel="noopener">
+            <img src="images/probability.png" height="250px" width="250px"
+              alt="Probability calculator interface with dice and probabilities">
+          </a>
+        </div>
+      </div>
+      <hr class="hr-rule" />
     </div>
-  </body>
+    </div>
+    <a href="#intro" id="backToTop" title="Go to top">Top</a>
+
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/kyletscheer/" target="_blank" rel="noopener" rel="noopener"
+          title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/kyletscheer" target="_blank" rel="noopener" rel="noopener" title="GitHub"><i
+            class="fa fa-github"></i></a>
+        <a href="https://kyletscheer.medium.com/" target="_blank" rel="noopener" rel="noopener" title="Medium"><i
+            class="fa fa-medium"></i></a>
+        <a href="https://www.instagram.com/kyletscheer/" target="_blank" rel="noopener" rel="noopener"
+          title="Instagram"><i class="fa fa-instagram"></i></a>
+      </div>
+
+      <p id="copy"> Contact me at - hi [at] kylescheer [dot] com.
+        &copy; 2023 Kyle Scheer.
+        <a href="https://github.com/kyletscheer/kyletscheer.github.io" target="_blank" rel="noopener" rel="noopener"
+          title="GitHub Code">
+          Free to use.</a>
+      </p>
+    </div>
+    </div>
+  <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+    <i class="fa fa-adjust"></i>
+  </div>
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="
+  https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js
+  "></script>
+</body>
+
 </html>

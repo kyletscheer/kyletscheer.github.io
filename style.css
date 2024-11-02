@@ -11,19 +11,34 @@ body {
   max-width: 800px;
   margin: 100px auto;
   margin-bottom: 20px;
+  text-align: center;
 }
+
+ul {
+  text-align: left;
+}
+
+img {
+  margin-top: 10px;
+  border: 5px solid #dedede;
+  /* Adjust color and thickness */
+  border-radius: 8px;
+  /* Optional: rounded corners */
+}
+
 a {
   color: #000000;
-  text-decoration: none;
 }
 
 a:hover {
   color: #666;
   text-decoration: underline;
 }
+
 .dark-mode a {
   color: #999;
 }
+
 .dark-mode a:hover {
   color: #f0f0f0;
   text-decoration: underline;
@@ -89,6 +104,7 @@ p {
   display: flex;
   align-items: flex-start;
 }
+
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -98,6 +114,7 @@ p {
   border-radius: 50%;
   background-color: #333;
 }
+
 .timeline-item-content {
   padding-left: 40px;
   color: #333;
@@ -114,6 +131,7 @@ p {
   text-align: right;
   width: 50px;
 }
+
 .timeline-item-title {
   font-size: 20px;
   margin-bottom: 10px;
@@ -123,6 +141,7 @@ p {
   font-size: 16px;
   line-height: 1.5;
 }
+
 .timeline-item-link {
   display: inline-block;
 }
@@ -167,6 +186,7 @@ p {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
 .dark-mode .hr-rule {
   background-color: white;
 }
@@ -180,14 +200,17 @@ p {
 .dark-mode .timeline-item-content {
   color: #fff;
 }
+
 .dark-mode .timeline-item::before {
   background-color: #999;
 }
+
 .dark-mode .timeline-item-date,
 .dark-mode .timeline-item-description,
 .dark-mode #copy {
   color: #999;
 }
+
 .dark-mode .timeline-item-link a {
   color: #ccc;
   background-color: #222;
@@ -195,6 +218,7 @@ p {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
 .blog::before {
   content: "\f15b";
   font-family: "Font Awesome\ 5 Free";
@@ -205,13 +229,16 @@ p {
   font-weight: 900;
   left: 5px;
 }
+
 .dark-mode .blog::before {
   color: #999;
   background-color: transparent;
 }
+
 .math::before {
   content: "\f52c";
 }
+
 .sort::before {
   content: "\f0dc";
 }
@@ -239,6 +266,7 @@ p {
 .lightning::before {
   content: "\f0e7";
 }
+
 .alphabet::before {
   content: "\f15d";
 }
@@ -258,13 +286,64 @@ p {
 .dice::before {
   content: "\f522";
 }
+
 .microlet::before {
-	content: "\f207";
+  content: "\f207";
 }
+
 .numbers::before {
-	content: "\f0cb";
+  content: "\f0cb";
 }
+
 .weekdays::before {
-	content: "\f073";
+  content: "\f073";
+}
+
+.testimonial-carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-item {
+  font-size: 1.1rem;
+  padding: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  font-style: none;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+.carousel-inner {
+  max-width: 90%; /* Adjust as needed */
+  margin: 0 auto; /* Center the content */
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Adjust width for more clickable area if needed */
+}
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it appears above other elements */
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: none; /* Hide by default */
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#backToTop:hover {
+  background-color: #555;
 }
 
