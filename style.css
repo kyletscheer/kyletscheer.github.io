@@ -299,6 +299,10 @@ p {
   content: "\f073";
 }
 
+.last-letter::before {
+  content: "\f15d";
+}
+
 .testimonial-carousel {
   max-width: 1000px;
   margin: 0 auto;
