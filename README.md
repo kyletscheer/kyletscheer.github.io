@@ -1,2 +1,2 @@
 # kyletscheer.github.io
-my personal website
+my personal website, showcasing my projects
