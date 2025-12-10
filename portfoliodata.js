@@ -52,6 +52,14 @@ window.portfolioData = {
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
     {
+      title: "One Bag Interactive Explorer",
+      date: "Nov, 2025",
+      description:
+        "Check out my packing setup for my travels in an interactive way.",
+      link: "https://www.kylescheer.com/onebag",
+      screenshotURL: "images/onebag_new.mp4",
+    },
+    {
       title: "TravelCents - Currency Conversion Game",
       date: "Mar, 2025",
       description:
