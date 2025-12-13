@@ -38,7 +38,7 @@ window.portfolioData = {
       title: "Liar’s Dice Calculator",
       description: "Quickly calculate probabilities while playing Liar’s Dice.",
       imageURL: "images/liarsdiceapp_new.mp4",
-      link: "https://www.kylescheer.com/test", // Placeholder
+      link: "https://www.kylescheer.com/apps/liars-dice",
     },
     /*{
       title: "Currency Conversion Game",

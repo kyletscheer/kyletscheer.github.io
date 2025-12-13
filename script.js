@@ -55,22 +55,22 @@ function populateApps() {
       const mediaHtml = generateMediaHtml(app.imageURL, app.title, true);
 
       return `
-            <li><a href="${app.link}" target="_blank" rel="noopener">
-                <div class="minimal-link" style="color: inherit; text-decoration: none; display: block; cursor: pointer;">
+            <li>
+                <div class="minimal-link" style="color: inherit; text-decoration: none; display: block;">
                     <div class="project-thumbnail-wrapper">
                         <div class="device-wrapper ios-wrapper">
                             <div class="screen-content">
                                 ${mediaHtml}
                             </div>
                         </div>
-                        <div class="project-thumbnail-content">
+                        <div style="cursor: pointer;" class="project-thumbnail-content"><a href="${app.link}" target="_blank" rel="noopener">
                             <strong>${app.title}</strong>
                             <span class="project-detail">${
                               app.description.split(".")[0]
                             }.</span>
-                        </div>
+                        </a></div>
                     </div>
-                </div></a>
+                </div>
             </li>
         `;
     })
@@ -85,19 +85,19 @@ function generateProjectHtml(p, index, isHiddenList = false) {
   );
 
   return `
-        <li><a href="${p.link}" target="_blank" rel="noopener">
+        <li>
                 <div class="project-thumbnail-wrapper">
                     <div class="device-wrapper desktop-wrapper">
                         ${mediaHtml}
                     </div>
-                    <div class="project-thumbnail-content">
+                    <div class="project-thumbnail-content"><a href="${p.link}" target="_blank" rel="noopener">
                         <strong>${p.title}</strong> (${p.date})
                         <span class="project-detail">${
                           p.description.split(".")[0]
                         }.</span>
-                    </div>
+                    </a></div>
                 </div>
-            </a></li>
+            </li>
     `;
 }
 
