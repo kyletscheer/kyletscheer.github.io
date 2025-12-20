@@ -52,6 +52,14 @@ window.portfolioData = {
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
     {
+      title: "Conversion Mental Math Step Generator",
+      date: "Dec, 2025",
+      description:
+        "Creates easy mental math steps for conversions (currency, unit, etc...)",
+      link: "https://www.kylescheer.com/mental-math",
+      screenshotURL: "images/mentalmath_new.mp4",
+    },
+    {
       title: "One Bag Interactive Explorer",
       date: "Nov, 2025",
       description:
