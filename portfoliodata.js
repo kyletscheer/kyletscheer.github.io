@@ -172,7 +172,7 @@ window.portfolioData = {
       title: "Automate Your Finances",
       date: "Mar, 2021",
       description: "A simpler way to handle your money.",
-      link: "https://www.kylescheer.com/bucket-finance",
+      link: "https://www.kylescheer.com/bucket_finance",
       screenshotURL: "images/bucketfinance_new.mp4",
     },
     {
