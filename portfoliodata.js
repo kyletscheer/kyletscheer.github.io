@@ -35,17 +35,17 @@ window.portfolioData = {
       link: "#" // Placeholder
     },*/
     {
-      title: "Liar’s Dice Calculator",
+      title: "Liar’s Dice Calculator (iOS)",
       description: "Quickly calculate probabilities while playing Liar’s Dice.",
       imageURL: "images/liarsdiceapp_new.mp4",
       link: "https://www.kylescheer.com/apps/liars-dice",
     },
-    /*{
-      title: "Currency Conversion Game",
+    {
+      title: "TravelCents App - Currency Conversion Game (iOS)",
       description: "Prepare for travel abroad by practicing currency conversions.",
-      imageURL: "url_to_currency_conversion_game_screenshot",
-      link: "#" // Placeholder
-    }*/
+      imageURL: "images/travelcents_app_new.mp4",
+      link: "https://www.kylescheer.com/apps/travelcents" // Placeholder
+    }
   ],
 
   // --- WEB PROJECTS (Personal Projects List) ---
