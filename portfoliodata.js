@@ -45,7 +45,14 @@ window.portfolioData = {
       description: "Prepare for travel abroad by practicing currency conversions.",
       imageURL: "images/travelcents_app_new.mp4",
       link: "https://www.kylescheer.com/apps/travelcents" // Placeholder
-    }*/
+    },
+    {
+      title: "Backdrop Player - Local videos with audio apps (iOS)",
+      description: "Watch local video files without your audio app pausing.",
+      imageURL: "images/backdrop_new.mp4",
+      link: "https://www.kylescheer.com/apps/travelcents" // Placeholder
+    },
+    */
   ],
 
   // --- WEB PROJECTS (Personal Projects List) ---
