@@ -39,13 +39,13 @@ window.portfolioData = {
       description: "Quickly calculate probabilities while playing Liar’s Dice.",
       imageURL: "images/liarsdiceapp_new.mp4",
       link: "https://www.kylescheer.com/apps/liars-dice",
-    }, 
+    }/*, 
     {
       title: "TravelCents App - Currency Conversion Game (iOS)",
       description: "Prepare for travel abroad by practicing currency conversions.",
       imageURL: "images/travelcents_app_new.mp4",
       link: "https://www.kylescheer.com/apps/travelcents" // Placeholder
-    }
+    }*/
   ],
 
   // --- WEB PROJECTS (Personal Projects List) ---
