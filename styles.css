@@ -132,6 +132,7 @@ body.dark-mode .minimal-link:hover {
   display: block;
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 .device-wrapper img,
 .device-wrapper video {
@@ -139,6 +140,175 @@ body.dark-mode .minimal-link:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.lightbox-thumbnail {
+  cursor: pointer;
+}
+.lightbox-thumbnail .screen-content,
+.lightbox-thumbnail > video,
+.lightbox-thumbnail > img {
+  transition: transform 0.25s ease;
+}
+.lightbox-thumbnail:hover .screen-content,
+.lightbox-thumbnail:hover > video,
+.lightbox-thumbnail:hover > img {
+  transform: scale(1.02);
+}
+.thumbnail-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease, background-color 0.25s ease;
+  pointer-events: none;
+}
+.lightbox-thumbnail:hover .thumbnail-overlay {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.28);
+}
+.thumbnail-overlay i {
+  font-size: 2rem;
+  color: #fff;
+  transform: scale(0.95);
+  transition: transform 0.2s ease;
+}
+.lightbox-thumbnail:hover .thumbnail-overlay i {
+  transform: scale(1.08);
+}
+
+#lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1rem;
+}
+#lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-backdrop {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-panel {
+  background-color: var(--light-bg);
+  color: var(--light-text-main);
+  width: 70vw;
+  max-width: 920px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.lightbox-panel.landscape {
+  width: 70vw;
+  max-width: 920px;
+}
+.lightbox-panel.portrait {
+  width: min(90vw, 900px);
+  max-width: 900px;
+}
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+}
+.lightbox-panel.portrait .lightbox-content {
+  display: grid;
+  grid-template-columns: minmax(290px, 1fr) minmax(260px, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.25rem;
+}
+.lightbox-panel.landscape .lightbox-content {
+  flex-direction: column;
+}
+body.dark-mode .lightbox-panel {
+  background-color: var(--dark-bg);
+  color: var(--dark-text-main);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+body.dark-mode .lightbox-close {
+  background: rgba(20, 20, 20, 0.95);
+  color: #fff;
+}
+.lightbox-close:hover {
+  transform: scale(1.05);
+}
+.lightbox-media-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 220px;
+  background: #000;
+  position: relative;
+}
+.lightbox-panel.portrait .lightbox-media-container {
+  aspect-ratio: 290 / 623.333;
+  max-height: 88vh;
+  min-height: 420px;
+}
+.lightbox-media-container video,
+.lightbox-media-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.lightbox-meta {
+  padding: 1.5rem;
+  text-align: left;
+}
+.lightbox-title {
+  margin: 0;
+  font-size: 1.45rem;
+}
+.lightbox-date,
+.lightbox-description {
+  margin: 0.65rem 0 0;
+  color: var(--light-text-context);
+  line-height: 1.5;
+}
+body.dark-mode .lightbox-date,
+body.dark-mode .lightbox-description {
+  color: var(--dark-text-context);
+}
+.lightbox-site-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.lightbox-date:empty,
+.lightbox-description:empty {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .lightbox-panel {
+    width: 90vw;
+  }
 }
 
 /* --- 7. iOS/App Styles (Realistic Phone) --- */

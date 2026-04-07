@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   populateProjects();
   setupDarkModeToggle();
   setupMoreProjectsToggle();
+  setupLightboxHandlers();
 });
 
 // ===================================
@@ -35,7 +36,7 @@ function generateMediaHtml(url, title, isApp) {
     return `<div style="text-align: center; padding: 20px; color: ${color};">${fallbackText}</div>`;
   }
 
-  const extension = url.split(".").pop().toLowerCase();
+  const extension = url.split("?")[0].split(".").pop().toLowerCase();
   let style = "width: 100%; height: 100%; object-fit: cover;";
 
   const lazyAttr = 'loading="lazy"';
@@ -44,8 +45,102 @@ function generateMediaHtml(url, title, isApp) {
     return `<video ${lazyAttr} src="${url}" alt="${title} Media" autoplay loop muted playsinline style="${style}"></video>`;
   }
 
-  // ADDED lazyAttr to the img tag
   return `<img ${lazyAttr} src="${url}" alt="${title} Screenshot" style="${style}" />`;
+}
+
+function escapeAttribute(value) {
+  if (typeof value !== "string") return "";
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function isLightboxMedia(url) {
+  if (typeof url !== "string") return false;
+  const extension = url.split("?")[0].split(".").pop().toLowerCase();
+  return extension === "mp4";
+}
+
+function createLightboxOverlay() {
+  if (document.getElementById("lightbox-overlay")) return;
+
+  const overlay = document.createElement("div");
+  overlay.id = "lightbox-overlay";
+  overlay.innerHTML = `
+    <div class="lightbox-backdrop" role="dialog" aria-modal="true">
+      <div class="lightbox-panel landscape">
+        <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+        <div class="lightbox-content">
+          <div class="lightbox-media-container"></div>
+          <div class="lightbox-meta">
+            <h2 class="lightbox-title"></h2>
+            <p class="lightbox-date"></p>
+            <p class="lightbox-description"></p>
+            <a class="lightbox-site-link minimal-link" href="#" target="_blank" rel="noopener">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener("click", (event) => {
+    if (
+      event.target === overlay ||
+      event.target.classList.contains("lightbox-backdrop")
+    ) {
+      closeLightbox();
+    }
+  });
+
+  overlay.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && overlay.classList.contains("active")) {
+      closeLightbox();
+    }
+  });
+}
+
+function openLightbox({ url, title, date, link, description, aspect = "landscape" }) {
+  createLightboxOverlay();
+  const overlay = document.getElementById("lightbox-overlay");
+  const panel = overlay.querySelector(".lightbox-panel");
+  const mediaContainer = overlay.querySelector(".lightbox-media-container");
+  const titleElem = overlay.querySelector(".lightbox-title");
+  const dateElem = overlay.querySelector(".lightbox-date");
+  const descriptionElem = overlay.querySelector(".lightbox-description");
+  const siteLink = overlay.querySelector(".lightbox-site-link");
+
+  panel.classList.remove("landscape", "portrait");
+  panel.classList.add(aspect === "portrait" ? "portrait" : "landscape");
+
+  mediaContainer.innerHTML = `
+    <video controls autoplay playsinline muted loop preload="metadata" src="${escapeAttribute(
+      url
+    )}" style="width:100%; height:100%; object-fit:contain;"></video>
+  `;
+  titleElem.textContent = title;
+  dateElem.textContent = date ? date : "";
+  descriptionElem.textContent = description ? description : "";
+  siteLink.href = link;
+  siteLink.textContent = "Visit Site";
+  overlay.classList.add("active");
+  document.body.classList.add("lightbox-open");
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById("lightbox-overlay");
+  if (!overlay) return;
+  overlay.classList.remove("active");
+  document.body.classList.remove("lightbox-open");
+  const mediaContainer = overlay.querySelector(".lightbox-media-container");
+  if (mediaContainer) {
+    mediaContainer.innerHTML = "";
+  }
 }
 
 function populateApps() {
@@ -53,15 +148,30 @@ function populateApps() {
   appsList.innerHTML = portfolioData.apps
     .map((app, index) => {
       const mediaHtml = generateMediaHtml(app.imageURL, app.title, true);
+      const lightboxEnabled = isLightboxMedia(app.imageURL);
+      const dataAttributes = lightboxEnabled
+        ? `data-lightbox-url="${escapeAttribute(app.imageURL)}" data-lightbox-title="${escapeAttribute(
+            app.title
+          )}" data-lightbox-date="${escapeAttribute(app.date || "")}" data-lightbox-link="${escapeAttribute(
+            app.link
+          )}" data-lightbox-description="${escapeAttribute(app.description)}" data-lightbox-aspect="portrait"`
+        : "";
 
       return `
             <li>
                 <div class="minimal-link" style="color: inherit; text-decoration: none; display: block;">
                     <div class="project-thumbnail-wrapper">
-                        <div class="device-wrapper ios-wrapper">
+                        <div class="device-wrapper ios-wrapper ${
+                          lightboxEnabled ? "lightbox-thumbnail" : ""
+                        }" ${dataAttributes}>
                             <div class="screen-content">
                                 ${mediaHtml}
                             </div>
+                            ${
+                              lightboxEnabled
+                                ? `<div class="thumbnail-overlay"><i class="fas fa-search-plus"></i></div>`
+                                : ""
+                            }
                         </div>
                         <div style="cursor: pointer;" class="project-thumbnail-content"><a href="${app.link}" target="_blank" rel="noopener">
                             <strong>${app.title}</strong>
@@ -79,16 +189,27 @@ function populateApps() {
 
 function generateProjectHtml(p, index, isHiddenList = false) {
   const mediaHtml = generateMediaHtml(p.screenshotURL, p.title, false);
-
-  const originalIndex = portfolioData.webProjects.findIndex(
-    (item) => item.title === p.title
-  );
+  const lightboxEnabled = isLightboxMedia(p.screenshotURL);
+  const dataAttributes = lightboxEnabled
+    ? `data-lightbox-url="${escapeAttribute(p.screenshotURL)}" data-lightbox-title="${escapeAttribute(
+        p.title
+      )}" data-lightbox-date="${escapeAttribute(p.date || "")}" data-lightbox-link="${escapeAttribute(
+        p.link
+      )}" data-lightbox-description="${escapeAttribute(p.description)}"`
+    : "";
 
   return `
         <li>
                 <div class="project-thumbnail-wrapper">
-                    <div class="device-wrapper desktop-wrapper">
+                    <div class="device-wrapper desktop-wrapper ${
+                      lightboxEnabled ? "lightbox-thumbnail" : ""
+                    }" ${dataAttributes}>
                         ${mediaHtml}
+                        ${
+                          lightboxEnabled
+                            ? `<div class="thumbnail-overlay"><i class="fas fa-search-plus"></i></div>`
+                            : ""
+                        }
                     </div>
                     <div class="project-thumbnail-content"><a href="${p.link}" target="_blank" rel="noopener">
                         <strong>${p.title}</strong> (${p.date})
@@ -99,6 +220,24 @@ function generateProjectHtml(p, index, isHiddenList = false) {
                 </div>
             </li>
     `;
+}
+
+function setupLightboxHandlers() {
+  document.body.addEventListener("click", (event) => {
+    const trigger = event.target.closest(".lightbox-thumbnail");
+    if (!trigger) return;
+    const url = trigger.dataset.lightboxUrl;
+    if (!url) return;
+    event.preventDefault();
+    openLightbox({
+      url,
+      title: trigger.dataset.lightboxTitle || "",
+      date: trigger.dataset.lightboxDate || "",
+      link: trigger.dataset.lightboxLink || "#",
+      description: trigger.dataset.lightboxDescription || "",
+      aspect: trigger.dataset.lightboxAspect || "landscape",
+    });
+  });
 }
 
 function populateProjects() {
