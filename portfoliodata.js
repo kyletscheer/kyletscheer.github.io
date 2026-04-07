@@ -57,6 +57,14 @@ window.portfolioData = {
   // --- WEB PROJECTS (Personal Projects List) ---
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
+        {
+      title: "Natalie Portmanteau Game",
+      date: "Dec, 2025",
+      description:
+        "Two real movies. One blended plot. Name both films and watch the portmanteau splice together. ",
+      link: "https://www.kylescheer.com/natalie_portmanteau",
+      screenshotURL: "images/natalie_new.mp4",
+    },
     {
       title: "Conversion Mental Math Step Generator",
       date: "Dec, 2025",

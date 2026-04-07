@@ -66,7 +66,7 @@ function populateApps() {
                         <div style="cursor: pointer;" class="project-thumbnail-content"><a href="${app.link}" target="_blank" rel="noopener">
                             <strong>${app.title}</strong>
                             <span class="project-detail">${
-                              app.description.split(".")[0]
+                              app.description
                             }.</span>
                         </a></div>
                     </div>
@@ -93,7 +93,7 @@ function generateProjectHtml(p, index, isHiddenList = false) {
                     <div class="project-thumbnail-content"><a href="${p.link}" target="_blank" rel="noopener">
                         <strong>${p.title}</strong> (${p.date})
                         <span class="project-detail">${
-                          p.description.split(".")[0]
+                          p.description
                         }.</span>
                     </a></div>
                 </div>
