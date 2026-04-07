@@ -59,7 +59,7 @@ window.portfolioData = {
   webProjects: [
         {
       title: "Natalie Portmanteau Game",
-      date: "Dec, 2025",
+      date: "Mar, 2026",
       description:
         "Two real movies. One blended plot. Name both films and watch the portmanteau splice together. ",
       link: "https://www.kylescheer.com/natalie_portmanteau",

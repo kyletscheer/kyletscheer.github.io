@@ -67,7 +67,7 @@ function populateApps() {
                             <strong>${app.title}</strong>
                             <span class="project-detail">${
                               app.description
-                            }.</span>
+                            }</span>
                         </a></div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ function generateProjectHtml(p, index, isHiddenList = false) {
                         <strong>${p.title}</strong> (${p.date})
                         <span class="project-detail">${
                           p.description
-                        }.</span>
+                        }</span>
                     </a></div>
                 </div>
             </li>
