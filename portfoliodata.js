@@ -57,6 +57,14 @@ window.portfolioData = {
   // --- WEB PROJECTS (Personal Projects List) ---
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
+     {
+      title: "Squarespace Assets Bulk Download Utility",
+      date: "Apr, 2026",
+      description:
+        "Allows users to easily download all their Squarespace website assets in one go, including images, videos, and documents.",
+      link: "https://www.kylescheer.com/squarespace-assets",
+      screenshotURL: "images/squarespace_new.mp4",
+    },
         {
       title: "Natalie Portmanteau Game",
       date: "Mar, 2026",
