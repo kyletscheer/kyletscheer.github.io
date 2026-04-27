@@ -34,30 +34,32 @@ window.portfolioData = {
       imageURL: "url_to_lingoleap_screenshot",
       link: "#" // Placeholder
     },*/
+
+    {
+      title: "TravelCents App - Currency Conversion Game (iOS)",
+      description:
+        "Prepare for travel abroad by practicing currency conversions.",
+      imageURL: "images/travelcents_app_new.mp4",
+      link: "https://www.kylescheer.com/apps/travelcents", // Placeholder
+    },
+    {
+      title: "Backdrop Player - Local videos with audio apps (iOS)",
+      description: "Watch local video files without your audio app pausing.",
+      imageURL: "images/backdrop_new.mp4",
+      link: "https://www.kylescheer.com/apps/backdrop", // Placeholder
+    },
     {
       title: "Liar’s Dice Calculator (iOS)",
       description: "Quickly calculate probabilities while playing Liar’s Dice.",
       imageURL: "images/liarsdiceapp_new.mp4",
       link: "https://www.kylescheer.com/apps/liars-dice",
-    },/* 
-    {
-      title: "TravelCents App - Currency Conversion Game (iOS)",
-      description: "Prepare for travel abroad by practicing currency conversions.",
-      imageURL: "images/travelcents_app_new.mp4",
-      link: "https://www.kylescheer.com/apps/travelcents" // Placeholder
-    },*/
-    {
-      title: "Backdrop Player - Local videos with audio apps (iOS)",
-      description: "Watch local video files without your audio app pausing.",
-      imageURL: "images/backdrop_new.mp4",
-      link: "https://www.kylescheer.com/apps/backdrop" // Placeholder
     },
   ],
 
   // --- WEB PROJECTS (Personal Projects List) ---
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
-     {
+    {
       title: "Squarespace Assets Bulk Download Utility",
       date: "Apr, 2026",
       description:
@@ -65,7 +67,7 @@ window.portfolioData = {
       link: "https://www.kylescheer.com/squarespace-assets",
       screenshotURL: "images/squarespace_new.mp4",
     },
-        {
+    {
       title: "Natalie Portmanteau Game",
       date: "Mar, 2026",
       description:
