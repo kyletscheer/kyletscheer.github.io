@@ -34,7 +34,13 @@ window.portfolioData = {
       imageURL: "url_to_lingoleap_screenshot",
       link: "#" // Placeholder
     },*/
-
+  {
+      title: "Unit Sharp App - Convert Measurements Game (iOS)",
+      description:
+        "Practice converting measurements with this app.",
+      imageURL: "images/unitsharp_app_new.mp4",
+      link: "https://www.kylescheer.com/apps/unit-sharp", // Placeholder
+    },
     {
       title: "TravelCents App - Currency Conversion Game (iOS)",
       description:
@@ -59,6 +65,14 @@ window.portfolioData = {
   // --- WEB PROJECTS (Personal Projects List) ---
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
+     {
+      title: "Unit Sharp",
+      date: "May, 2026",
+      description:
+        "The same as ConvertQuest, with a better name and a sharper design. Mobile-first. Convert measurements game (length, temp, mass, etc...) to improve your mental math.",
+      link: "https://www.kylescheer.com/unit-sharp",
+      screenshotURL: "images/unitsharp_new.mp4",
+    },
     {
       title: "Squarespace Assets Bulk Download Utility",
       date: "Apr, 2026",
