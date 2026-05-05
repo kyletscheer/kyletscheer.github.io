@@ -132,7 +132,42 @@ apps-list li:first-child {
 }
 .apps-scroll {
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 0 1rem;
+  scrollbar-gutter: stable both-edges;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--light-accent) rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .apps-scroll {
+  scrollbar-color: var(--dark-accent) rgba(255, 255, 255, 0.1);
+}
+
+.apps-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.apps-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+}
+
+body.dark-mode .apps-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.apps-scroll::-webkit-scrollbar-thumb {
+  background: rgba(58, 112, 255, 0.8);
+  border-radius: 999px;
+}
+
+body.dark-mode .apps-scroll::-webkit-scrollbar-thumb {
+  background: rgba(102, 204, 255, 0.8);
+}
+
+.apps-scroll::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 .apps-row {
