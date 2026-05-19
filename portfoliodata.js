@@ -77,7 +77,7 @@ window.portfolioData = {
       title: "Squarespace Assets Bulk Download Utility",
       date: "Apr, 2026",
       description:
-        "Allows users to easily download all their Squarespace website assets in one go, including images, videos, and documents.",
+        "Tool to download all Squarespace image assets in bulk. Version for 'marathonphotos.live' watermarked images at <a href='https://www.kylescheer.com/marathon-photos-download/' target='_blank'>Marathon Photos Download</a>.",
       link: "https://www.kylescheer.com/squarespace-assets",
       screenshotURL: "images/squarespace_new.mp4",
     },
