@@ -65,7 +65,15 @@ window.portfolioData = {
   // --- WEB PROJECTS (Personal Projects List) ---
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
-     {
+    {
+      title: "RankIt - Multi-Method Decision-Making Tool",
+      date: "June, 2026",
+      description:
+        "A tool to help you make decisions by ranking your options using multiple methods (pairwise comparison, weighted scoring, etc...).",
+      link: "https://www.kylescheer.com/rankit",
+      screenshotURL: "images/rankit_new.mp4",
+    }, 
+    {
       title: "Unit Sharp",
       date: "May, 2026",
       description:
