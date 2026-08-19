@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An arcade cabinet portfolio concept for Kyle Scheer's apps and web projects."
+    />
+    <title>Kyle Scheer - Tool Arcade</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="../portfoliodata.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topline">
+      <a class="logo" href="#top">SCHEER ARCADE</a>
+      <nav aria-label="Arcade navigation">
+        <a href="#cabinet">Cabinet</a>
+        <a href="#tokens">Tokens</a>
+        <a href="#apps">Apps</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="marquee" aria-labelledby="marqueeTitle">
+        <div class="marquee-copy">
+          <p class="coin-text">Insert curiosity</p>
+          <h1 id="marqueeTitle">Free tools with playable edges.</h1>
+          <p>
+            Games, calculators, travel helpers, and tiny utilities from Kyle
+            Scheer. Everything is built for use, given freely, and presented here
+            like a cabinet full of playable cartridges.
+          </p>
+        </div>
+        <div class="scoreboard" id="scoreboard"></div>
+      </section>
+
+      <section class="cabinet" id="cabinet" aria-labelledby="cabinetTitle">
+        <div class="cabinet-screen">
+          <div class="screen-top">
+            <span>Now loading</span>
+            <strong id="activeCategoryLabel">All</strong>
+          </div>
+          <div class="featured-cartridge" id="featuredCartridge"></div>
+        </div>
+        <aside class="control-deck">
+          <h2 id="cabinetTitle">Pick a mode</h2>
+          <div class="mode-buttons" id="modeButtons"></div>
+          <label class="search-control">
+            <span>Search cabinet</span>
+            <input id="searchInput" type="search" placeholder="probability, travel, dice..." />
+          </label>
+        </aside>
+      </section>
+
+      <section class="token-wall" id="tokens" aria-labelledby="tokensTitle">
+        <div class="section-head">
+          <p class="coin-text">Token wall</p>
+          <h2 id="tokensTitle">Every project is a playable tile</h2>
+        </div>
+        <div class="token-grid" id="tokenGrid"></div>
+        <p class="empty" id="emptyMessage" hidden>No matching cartridges found.</p>
+      </section>
+
+      <section class="apps" id="apps" aria-labelledby="appsTitle">
+        <div class="section-head">
+          <p class="coin-text">Pocket cabinet</p>
+          <h2 id="appsTitle">iOS apps</h2>
+        </div>
+        <div class="app-strip" id="appStrip"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>No ads. No subscriptions. No locked levels.</p>
+      <a href="mailto:hi@kylescheer.com">hi@kylescheer.com</a>
+    </footer>
+  </body>
+</html>

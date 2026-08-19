@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riders Club of America</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F3A4C;
+    --ink-soft:#3C5A6E;
+    --paper:#F2F4EC;
+    --paper-raised:#FFFFFF;
+    --amber:#DE9B33;
+    --amber-deep:#B97C1F;
+    --sage:#6E8F74;
+    --sage-deep:#516B57;
+    --charcoal:#2B2A22;
+    --line:#D9D6C6;
+    --line-strong:#C3BFAA;
+    --max:1120px;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'Source Sans 3', sans-serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Lora', serif;
+    color:var(--ink);
+    line-height:1.15;
+    margin:0 0 .5em 0;
+    font-weight:600;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  :focus-visible{outline:3px solid var(--sage-deep); outline-offset:3px;}
+
+  /* ---------- Skip link ---------- */
+  .skip-link{
+    position:absolute; left:-999px; top:0; background:var(--ink); color:#fff;
+    padding:12px 20px; z-index:200; border-radius:0 0 8px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Top utility bar ---------- */
+  .utility-bar{
+    background:var(--ink);
+    color:#EAF1F0;
+    font-size:15px;
+  }
+  .utility-bar .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-top:8px; padding-bottom:8px; gap:16px; flex-wrap:wrap;
+  }
+  .utility-bar a.phone{
+    color:#fff; text-decoration:none; font-weight:700; letter-spacing:.02em;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .utility-bar a.phone svg{flex:none;}
+  .utility-bar .hours{opacity:.85;}
+
+  /* ---------- Header / nav ---------- */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(242,244,236,.92);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 0;
+    gap:20px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:12px; text-decoration:none;
+  }
+  .brand-mark{
+    width:44px; height:44px; flex:none;
+  }
+  .brand-text{
+    font-family:'Lora', serif; font-weight:700; color:var(--ink);
+    font-size:20px; line-height:1.1;
+  }
+  .brand-text span{
+    display:block; font-family:'Source Sans 3', sans-serif; font-weight:600;
+    font-size:12.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--sage-deep);
+    margin-top:2px;
+  }
+  nav.main-nav ul{
+    list-style:none; display:flex; gap:6px; margin:0; padding:0; flex-wrap:wrap;
+  }
+  nav.main-nav a{
+    text-decoration:none; color:var(--ink-soft); font-weight:600; font-size:15.5px;
+    padding:9px 13px; border-radius:9px; display:inline-block;
+  }
+  nav.main-nav a:hover{background:rgba(110,143,116,.14); color:var(--sage-deep);}
+  .nav-cta{
+    display:flex; gap:10px; align-items:center; flex:none;
+  }
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font-weight:700; text-decoration:none; border-radius:11px;
+    padding:12px 22px; font-size:16px; cursor:pointer; border:2px solid transparent;
+    font-family:'Source Sans 3', sans-serif;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-amber{background:var(--amber); color:#402703; box-shadow:0 3px 0 var(--amber-deep);}
+  .btn-amber:hover{box-shadow:0 4px 0 var(--amber-deep);}
+  .btn-ink{background:var(--ink); color:#fff; box-shadow:0 3px 0 #0F2330;}
+  .btn-outline{background:transparent; border-color:var(--ink); color:var(--ink);}
+  .btn-outline:hover{background:var(--ink); color:#fff;}
+  .btn-sm{padding:9px 16px; font-size:14.5px; border-radius:9px;}
+  .btn-block{width:100%;}
+  .menu-toggle{display:none;}
+
+  /* ---------- Route spine (signature element) ---------- */
+  .route-spine{
+    position:absolute; left:50%; top:0; bottom:0; width:2px;
+    transform:translateX(-.5px);
+    pointer-events:none; z-index:0;
+  }
+  .route-spine svg{position:sticky; top:0;}
+
+  section{position:relative; z-index:1;}
+
+  .stop-marker{
+    position:absolute; left:50%; transform:translate(-50%,-50%);
+    width:14px; height:14px; border-radius:50%;
+    background:var(--paper); border:3px solid var(--sage-deep);
+    z-index:2;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:76px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--sage-deep); background:rgba(110,143,116,.14);
+    padding:7px 14px; border-radius:999px; margin-bottom:22px;
+  }
+  .eyebrow .dot{width:7px; height:7px; border-radius:50%; background:var(--amber);}
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px);
+    letter-spacing:-.01em;
+  }
+  .hero .lede{
+    font-size:19.5px; color:var(--ink-soft); max-width:46ch; margin-bottom:30px;
+  }
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:34px;}
+  .hero-trust{
+    display:flex; gap:28px; flex-wrap:wrap; padding-top:24px; border-top:1px solid var(--line-strong);
+  }
+  .hero-trust .stat b{
+    display:block; font-family:'Lora',serif; font-size:26px; color:var(--ink); font-weight:700;
+  }
+  .hero-trust .stat span{font-size:14px; color:var(--ink-soft);}
+
+  .hero-art{
+    position:relative;
+    background:var(--paper-raised);
+    border-radius:22px;
+    border:1px solid var(--line);
+    box-shadow:0 18px 44px -20px rgba(31,58,76,.35);
+    padding:26px;
+  }
+  .route-card-map{
+    background:linear-gradient(155deg,#EAF0EA, #F7F5EB 60%);
+    border-radius:16px; padding:26px 22px 22px;
+    border:1px solid var(--line);
+  }
+  .route-card-map .map-title{
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--sage-deep); margin-bottom:14px;
+  }
+  .route-svg{width:100%; height:auto; display:block;}
+  .route-card-caption{
+    display:flex; align-items:center; gap:10px; margin-top:16px; font-size:14.5px; color:var(--ink-soft);
+  }
+  .pill-badge{
+    position:absolute; top:-16px; right:22px;
+    background:var(--amber); color:#402703; font-weight:700; font-size:14px;
+    padding:9px 16px; border-radius:999px; box-shadow:0 8px 18px -6px rgba(185,124,31,.6);
+    display:flex; align-items:center; gap:7px;
+  }
+
+  /* ---------- Section frame ---------- */
+  .section{padding:78px 0;}
+  .section-alt{background:var(--paper-raised);}
+  .section-ink{background:var(--ink); color:#EAF1F0;}
+  .section-ink h2, .section-ink h3{color:#fff;}
+  .section-head{max-width:640px; margin:0 auto 48px; text-align:center;}
+  .section-head .eyebrow{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(26px,3vw,36px);}
+  .section-head p{color:var(--ink-soft); font-size:17.5px;}
+  .section-ink .section-head p{color:#C7D6D3;}
+
+  /* ---------- Advantages ---------- */
+  .cards-3{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius);
+    padding:30px 26px; position:relative;
+  }
+  .card .icon-wrap{
+    width:48px; height:48px; border-radius:12px; background:rgba(222,155,51,.16);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .card h3{font-size:20px; margin-bottom:10px;}
+  .card ul{margin:0; padding-left:20px; color:var(--ink-soft); font-size:16px;}
+  .card ul li{margin-bottom:8px;}
+
+  /* ---------- Service area ---------- */
+  .area-layout{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+  .area-map-card{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:24px;
+  }
+  table.area-table{width:100%; border-collapse:collapse; font-size:15.5px;}
+  table.area-table th{
+    text-align:left; font-family:'Lora',serif; font-size:13.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--sage-deep); font-weight:700; padding:8px 10px; border-bottom:2px solid var(--line-strong);
+  }
+  table.area-table td{padding:9px 10px; border-bottom:1px solid var(--line); color:var(--charcoal);}
+  table.area-table tr:last-child td{border-bottom:none;}
+  .zip-tag{
+    display:inline-block; background:var(--ink); color:#fff; font-size:12.5px; font-weight:700;
+    padding:2px 8px; border-radius:6px; margin-left:6px;
+  }
+  .boundary-note{
+    margin-top:18px; padding:16px 18px; background:rgba(110,143,116,.12); border-radius:10px; font-size:15px; color:var(--sage-deep);
+    display:flex; gap:10px;
+  }
+
+  /* ---------- Partners ---------- */
+  .partner-row{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .partner-card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:28px;
+    display:flex; gap:18px;
+  }
+  .partner-badge{
+    flex:none; width:52px; height:52px; border-radius:12px; background:var(--sage); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Lora',serif; font-weight:700; font-size:20px;
+  }
+  .partner-card h4{margin-bottom:6px; font-size:18px; font-family:'Lora',serif; color:var(--ink);}
+  .partner-card p{margin:0; color:var(--ink-soft); font-size:15.5px;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonial-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px;}
+  .testimonial{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; font-size:17px; position:relative;
+  }
+  .testimonial .quote-mark{
+    font-family:'Lora',serif; font-size:44px; color:var(--amber); line-height:.5; display:block; margin-bottom:10px;
+  }
+  .testimonial cite{
+    display:block; margin-top:14px; font-style:normal; font-weight:700; color:var(--sage-deep); font-size:14.5px;
+  }
+
+  /* ---------- Leadership ---------- */
+  .leader-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .leader-card{text-align:left;}
+  .leader-photo{
+    width:100%; aspect-ratio:1/1; border-radius:var(--radius); background:linear-gradient(155deg,#DCE7DD,#EFF0E4);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px; border:1px solid var(--line);
+  }
+  .leader-photo svg{width:38%; height:38%; color:var(--sage-deep);}
+  .leader-card h4{font-size:19px; margin-bottom:2px;}
+  .leader-role{font-size:13.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--amber-deep); margin-bottom:10px; display:block;}
+  .leader-card p{font-size:15px; color:var(--ink-soft);}
+
+  /* ---------- History timeline ---------- */
+  .history-block{display:grid; grid-template-columns:.9fr 1.1fr; gap:52px; align-items:center;}
+  .history-block p{color:var(--ink-soft); font-size:17.5px;}
+  .history-visual{
+    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); padding:30px;
+  }
+  .history-step{display:flex; gap:16px; padding:14px 0; border-bottom:1px solid var(--line);}
+  .history-step:last-child{border-bottom:none;}
+  .history-step .yr{
+    flex:none; width:64px; font-family:'Lora',serif; font-weight:700; color:var(--amber-deep); font-size:16px;
+  }
+  .history-step p{margin:0; font-size:15.5px; color:var(--charcoal);}
+
+  /* ---------- Get involved ---------- */
+  .involve-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .involve-card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; display:flex; flex-direction:column; height:100%;
+  }
+  .involve-card h4{font-size:18px; margin-bottom:8px;}
+  .involve-card p{font-size:15px; color:var(--ink-soft); flex:1; margin-bottom:18px;}
+  .involve-tag{
+    display:inline-block; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+    padding:4px 10px; border-radius:999px; margin-bottom:14px; width:fit-content;
+  }
+  .tag-give{background:rgba(222,155,51,.18); color:var(--amber-deep);}
+  .tag-time{background:rgba(110,143,116,.18); color:var(--sage-deep);}
+
+  /* ---------- FAQ ---------- */
+  .faq-tabs{display:flex; gap:10px; justify-content:center; margin-bottom:32px; flex-wrap:wrap;}
+  .faq-tab{
+    background:var(--paper-raised); border:1.5px solid var(--line); color:var(--ink-soft);
+    font-weight:700; font-size:15px; padding:10px 18px; border-radius:999px; cursor:pointer;
+  }
+  .faq-tab[aria-selected="true"]{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .faq-list{max-width:780px; margin:0 auto;}
+  .faq-group{display:none;}
+  .faq-group.active{display:block;}
+  .faq-item{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:12px; margin-bottom:12px; overflow:hidden;
+  }
+  .faq-item summary{
+    cursor:pointer; list-style:none; padding:18px 22px; font-weight:700; color:var(--ink);
+    display:flex; justify-content:space-between; align-items:center; gap:14px; font-size:16.5px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item .chev{transition:transform .2s ease; flex:none; color:var(--sage-deep);}
+  .faq-item[open] .chev{transform:rotate(45deg);}
+  .faq-item .faq-a{padding:0 22px 20px; color:var(--ink-soft); font-size:16px;}
+
+  /* ---------- Donate / Apply forms (mockups) ---------- */
+  .panel-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .form-card{
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius); padding:32px;
+  }
+  .form-card h3{font-size:21px; margin-bottom:6px;}
+  .form-card .sub{color:var(--ink-soft); font-size:15px; margin-bottom:24px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-weight:700; font-size:14.5px; margin-bottom:7px; color:var(--ink);}
+  .field input, .field select, .field textarea{
+    width:100%; padding:12px 14px; border-radius:9px; border:1.5px solid var(--line-strong);
+    font-family:inherit; font-size:16px; background:var(--paper); color:var(--charcoal);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:3px solid var(--sage-deep); outline-offset:1px; border-color:var(--sage-deep);}
+  .radio-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .radio-opt{
+    display:flex; align-items:center; gap:8px; border:1.5px solid var(--line-strong); border-radius:9px; padding:10px 14px; cursor:pointer;
+    font-size:15px; font-weight:600;
+  }
+  .radio-opt input{width:auto;}
+  .mock-note{
+    font-size:13px; color:var(--ink-soft); background:rgba(110,143,116,.12); border-radius:8px; padding:9px 12px; margin-top:14px;
+  }
+  .mini-list{list-style:none; margin:0; padding:0;}
+  .mini-list li{
+    display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:15.5px; color:var(--ink-soft);
+  }
+  .mini-list li:last-child{border-bottom:none;}
+  .mini-list .num{
+    flex:none; width:26px; height:26px; border-radius:50%; background:var(--ink); color:#fff;
+    font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center;
+  }
+
+  /* ---------- Login mockup ---------- */
+  .login-card{
+    max-width:420px; margin:0 auto; background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:var(--radius); padding:32px; box-shadow:0 18px 44px -22px rgba(31,58,76,.4);
+  }
+  .login-card h3{text-align:center; font-size:20px;}
+  .login-card .sub{text-align:center; color:var(--ink-soft); font-size:14.5px; margin-bottom:22px;}
+  .login-links{display:flex; justify-content:space-between; font-size:13.5px; margin-top:6px;}
+  .login-links a{color:var(--sage-deep); text-decoration:none; font-weight:700;}
+  .checkbox-row{display:flex; align-items:center; gap:9px; font-size:14.5px; margin:16px 0; color:var(--ink-soft);}
+  .checkbox-row input{width:auto;}
+
+  /* ---------- Contact ---------- */
+  .contact-grid{display:grid; grid-template-columns:.8fr 1.2fr; gap:44px;}
+  .contact-info-card{
+    background:var(--ink); color:#EAF1F0; border-radius:var(--radius); padding:32px;
+  }
+  .contact-info-card h3{color:#fff;}
+  .contact-line{display:flex; gap:14px; align-items:flex-start; margin-bottom:20px;}
+  .contact-line svg{flex:none; margin-top:2px; color:var(--amber);}
+  .contact-line strong{display:block; font-size:16px; color:#fff;}
+  .contact-line span{font-size:14.5px; color:#C7D6D3;}
+
+  /* ---------- Footer ---------- */
+  footer{background:#152B38; color:#B9CBCA; padding:52px 0 28px; font-size:15px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px; margin-bottom:36px;}
+  footer h5{color:#fff; font-family:'Lora',serif; font-size:16px; margin-bottom:16px;}
+  footer ul{list-style:none; margin:0; padding:0;}
+  footer li{margin-bottom:10px;}
+  footer a{color:#B9CBCA; text-decoration:none;}
+  footer a:hover{color:#fff;}
+  .footer-brand{display:flex; align-items:center; gap:10px; margin-bottom:14px;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12); padding-top:22px; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:10px; font-size:13.5px; color:#8FA5A3;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    nav.main-nav{
+      position:fixed; inset:0 0 0 auto; width:78%; max-width:320px; background:var(--paper-raised);
+      transform:translateX(100%); transition:transform .25s ease; z-index:150; padding:90px 26px 26px;
+      box-shadow:-10px 0 30px rgba(0,0,0,.15);
+    }
+    nav.main-nav.open{transform:translateX(0);}
+    nav.main-nav ul{flex-direction:column; gap:2px;}
+    nav.main-nav a{display:block; padding:13px 10px; font-size:17px;}
+    .menu-toggle{
+      display:flex; align-items:center; justify-content:center; width:44px; height:44px;
+      background:var(--ink); color:#fff; border:none; border-radius:9px; cursor:pointer; z-index:160;
+    }
+    .nav-overlay{
+      display:none; position:fixed; inset:0; background:rgba(20,30,30,.4); z-index:140;
+    }
+    .nav-overlay.open{display:block;}
+    .hero .wrap, .area-layout, .partner-row, .history-block, .panel-grid, .contact-grid{
+      grid-template-columns:1fr;
+    }
+    .cards-3, .testimonial-grid, .leader-grid{grid-template-columns:1fr;}
+    .involve-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .nav-cta .btn-outline{display:none;}
+  }
+  @media (max-width: 560px){
+    body{font-size:17px;}
+    .hero{padding:48px 0 56px;}
+    .section{padding:56px 0;}
+    .involve-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .utility-bar .hours{display:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Utility bar -->
+<div class="utility-bar">
+  <div class="wrap">
+    <a class="phone" href="tel:13193651511">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Call (319) 365-1511
+    </a>
+    <span class="hours">Rides run 24/7 &nbsp;•&nbsp; Office hours: Mon&ndash;Fri, 9am&ndash;3pm</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="21" fill="#1F3A4C"/>
+        <path d="M11 26.5c2-6 5.5-11 11-11s9 5 11 11" stroke="#DE9B33" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <circle cx="14" cy="29" r="3" fill="#F2F4EC"/>
+        <circle cx="30" cy="29" r="3" fill="#F2F4EC"/>
+        <path d="M14 29h16" stroke="#F2F4EC" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-text">Riders Club<span>of America</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#service-area">Where We Ride</a></li>
+        <li><a href="#stories">Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#get-involved">Get Involved</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#login" class="btn btn-outline btn-sm">Member Login</a>
+      <a href="#get-involved" class="btn btn-amber btn-sm">Request a Ride</a>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay"></div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow"><span class="dot"></span> Serving the Cedar Rapids Metro since 2008</span>
+        <h1>Giving up the keys doesn't mean giving up your independence.</h1>
+        <p class="lede">Riders Club of America pairs volunteer drivers with seniors and riders with vision or hearing impairments &mdash; so you can keep going wherever life takes you, door to door, day or night.</p>
+        <div class="hero-actions">
+          <a href="#get-involved" class="btn btn-amber">Become a Rider</a>
+          <a href="#get-involved" class="btn btn-outline">Volunteer to Drive</a>
+        </div>
+        <div class="hero-trust">
+          <div class="stat"><b>24/7</b><span>Rides available</span></div>
+          <div class="stat"><b>10</b><span>Communities served</span></div>
+          <div class="stat"><b>30%+</b><span>Cheaper than a taxi</span></div>
+          <div class="stat"><b>100%</b><span>Volunteer drivers, background&#8209;checked</span></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <span class="pill-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Door-to-door, every ride
+        </span>
+        <div class="route-card-map">
+          <div class="map-title">A typical Tuesday route</div>
+          <svg class="route-svg" viewBox="0 0 320 220" fill="none">
+            <path d="M20 190 C 60 150, 40 90, 90 70 S 170 40, 190 90 S 260 130, 300 40" stroke="#B7CBB9" stroke-width="3" stroke-dasharray="1 10" stroke-linecap="round"/>
+            <circle cx="20" cy="190" r="7" fill="#1F3A4C"/>
+            <circle cx="90" cy="70" r="6" fill="#6E8F74"/>
+            <circle cx="190" cy="90" r="6" fill="#6E8F74"/>
+            <circle cx="300" cy="40" r="7" fill="#DE9B33"/>
+            <text x="8" y="210" font-family="Source Sans 3" font-size="12" fill="#3C5A6E">Home</text>
+            <text x="66" y="58" font-family="Source Sans 3" font-size="12" fill="#3C5A6E">Clinic</text>
+            <text x="164" y="112" font-family="Source Sans 3" font-size="12" fill="#3C5A6E">Grocery</text>
+            <text x="264" y="30" font-family="Source Sans 3" font-size="12" fill="#3C5A6E">Home</text>
+          </svg>
+          <div class="route-card-caption">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6E8F74" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Book by noon the day before &mdash; we'll plan the most direct route for every stop.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="section section-alt" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Why members choose us</span>
+        <h2>Rides built around you, not a schedule</h2>
+        <p>A low-cost, pre-paid ride-share membership designed specifically for older adults and riders with vision or hearing impairments.</p>
+      </div>
+      <div class="cards-3">
+        <div class="card">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B97C1F" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Low-price rides</h3>
+          <ul>
+            <li>One low annual fee unlocks the whole program</li>
+            <li>Typically 30%+ less than a local taxi, per destination</li>
+            <li>Living at a partner care facility? Your fee may already be covered</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B97C1F" stroke-width="2"><path d="M5 12h14M5 12l4-4M5 12l4 4"/></svg></div>
+          <h3>Real convenience</h3>
+          <ul>
+            <li>Pre-paid rides &mdash; no fumbling for cash or cards</li>
+            <li>Door-to-door pickup, so you wait comfortably at home</li>
+            <li>One-on-one service, straight to where you're going</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B97C1F" stroke-width="2"><path d="M9 18l6-6-6-6" /></svg></div>
+          <h3>We plan it with you</h3>
+          <ul>
+            <li>Tell us your errands and appointments</li>
+            <li>We'll map the most direct way to get them all done</li>
+            <li>A caregiver can ride along at no extra charge</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE / HISTORY -->
+  <section class="section" id="who-we-are">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Our story</span>
+        <h2>People helping people, since one Rotary meeting in Dubuque</h2>
+      </div>
+      <div class="history-block">
+        <div>
+          <p>Riders Club of America started with an idea borrowed and improved. At a Rotary meeting in Dubuque, Iowa, founder Martin Wissenberg heard a presentation on DuRide &mdash; a ride-share program built to help people who could no longer drive stay connected to their communities.</p>
+          <p>Martin thought, <em>"I can do that."</em> Drawing on a background in logistics, he built the scheduling software that still powers the club today, matching volunteer drivers to riders and automating pre-payment so members can simply get in and go.</p>
+          <p>Within months he'd partnered with senior care providers and city officials across the Cedar Rapids area, and Riders Club of America was on the road.</p>
+        </div>
+        <div class="history-visual">
+          <div class="history-step">
+            <div class="yr">Step 1</div>
+            <p>A Rotary presentation on Dubuque's DuRide program sparks the idea.</p>
+          </div>
+          <div class="history-step">
+            <div class="yr">Step 2</div>
+            <p>Martin Wissenberg builds a scheduling &amp; pre-payment system from the ground up.</p>
+          </div>
+          <div class="history-step">
+            <div class="yr">Step 3</div>
+            <p>Partnerships form with Cedar Rapids senior care providers and city officials.</p>
+          </div>
+          <div class="history-step">
+            <div class="yr">Step 4</div>
+            <p>Riders Club of America launches, connecting volunteer drivers and riders 24/7.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Leadership</span>
+        <h2>The people steering the club</h2>
+      </div>
+      <div class="leader-grid">
+        <div class="leader-card">
+          <div class="leader-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+          <h4>Martin Wissenberg</h4>
+          <span class="leader-role">Executive Director</span>
+          <p>Brings 12 years of process-improvement work across the Midwest and 8+ years in sales and sales management, with a track record of lifting efficiency for both start-ups and Fortune 500 companies.</p>
+        </div>
+        <div class="leader-card">
+          <div class="leader-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+          <h4>Elizabeth Trcka</h4>
+          <span class="leader-role">Board Chair</span>
+          <p>Founding partner of the Skywalk Group and former Director of Human Resources and Staffing at McLeodUSA, with more than twenty years of HR and management experience across startups and Fortune 500 companies.</p>
+        </div>
+        <div class="leader-card">
+          <div class="leader-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+          <h4>Jim Balvanz</h4>
+          <span class="leader-role">Treasurer</span>
+          <p>Over 30 years of financial management experience in the communications and contact-center industries, with a history of guiding fast-growing companies through acquisitions and capital raises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="section" id="service-area">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Where we ride</span>
+        <h2>Currently serving the Cedar Rapids metro</h2>
+        <p>Riders Club is growing steadily to reach new communities across eastern Iowa.</p>
+      </div>
+      <div class="area-layout">
+        <div class="area-map-card">
+          <table class="area-table">
+            <thead>
+              <tr><th>City</th><th>Area</th><th>ZIP</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cedar Rapids</td><td>Downtown</td><td>52401</td></tr>
+              <tr><td>Cedar Rapids</td><td>NE side</td><td>52402</td></tr>
+              <tr><td>Cedar Rapids</td><td>SE side</td><td>52403</td></tr>
+              <tr><td>Cedar Rapids</td><td>SW side</td><td>52404</td></tr>
+              <tr><td>Cedar Rapids</td><td>NW side</td><td>52405</td></tr>
+              <tr><td>Cedar Rapids</td><td>West</td><td>52411</td></tr>
+              <tr><td>Hiawatha</td><td>&mdash;</td><td>52233</td></tr>
+              <tr><td>Robins</td><td>&mdash;</td><td>52328</td></tr>
+              <tr><td>Marion</td><td>&mdash;</td><td>52302</td></tr>
+              <tr><td>Bertram</td><td>&mdash;</td><td>52403</td></tr>
+            </tbody>
+          </table>
+          <div class="boundary-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#516B57" stroke-width="2" style="flex:none;"><path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg>
+            <span>Roughly bounded by Tower Terrace Rd (N), Highway&nbsp;13 (E), US&nbsp;30 (S), and Stoney Point Rd (W). Not sure if you're in range? Just call the office.</span>
+          </div>
+        </div>
+        <div>
+          <h3>Not seeing your town?</h3>
+          <p style="color:var(--ink-soft); font-size:17px;">Riders Club of America started with a single community and has been expanding ever since. If you'd like to bring a chapter to your city, we'll walk you through what it takes to get started.</p>
+          <a href="#get-involved" class="btn btn-ink">Ask About Starting a Club</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Community partners</span>
+        <h2>Local businesses helping riders go further</h2>
+      </div>
+      <div class="partner-row">
+        <div class="partner-card">
+          <div class="partner-badge">HB</div>
+          <div>
+            <h4>Hills Bank</h4>
+            <p>Hills Bank helps cover the cost of member rides to any of their Cedar Rapids-area locations. Call the office at (319) 365-1511 for details.</p>
+          </div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-badge">SE</div>
+          <div>
+            <h4>Stuff Etc!</h4>
+            <p>Donate sellable items at any Stuff Etc. location under nonprofit #15491, and 50% of the proceeds come back to support Riders Club members.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="stories">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> In their words</span>
+        <h2>What riders and families tell us</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <span class="quote-mark">&ldquo;</span>
+          <p>Thanks for the service &mdash; it makes a huge difference for us.</p>
+          <cite>Marian B.</cite>
+        </div>
+        <div class="testimonial">
+          <span class="quote-mark">&ldquo;</span>
+          <p>You have a wonderful way of going out of your way to be wonderful. I recommend your group to anyone who could use it.</p>
+          <cite>D.M.</cite>
+        </div>
+        <div class="testimonial">
+          <span class="quote-mark">&ldquo;</span>
+          <p>Thank you for taking such good care of me.</p>
+          <cite>Jane</cite>
+        </div>
+        <div class="testimonial">
+          <span class="quote-mark">&ldquo;</span>
+          <p>My family member reports being very happy with the service.</p>
+          <cite>LL &middot; Fullerton, CA</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Questions, answered</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq-tabs" role="tablist" aria-label="FAQ categories">
+        <button class="faq-tab" role="tab" aria-selected="true" data-target="faq-eligibility">Eligibility</button>
+        <button class="faq-tab" role="tab" aria-selected="false" data-target="faq-cost">Cost</button>
+        <button class="faq-tab" role="tab" aria-selected="false" data-target="faq-access">Getting a ride</button>
+        <button class="faq-tab" role="tab" aria-selected="false" data-target="faq-other">Other</button>
+      </div>
+      <div class="faq-list">
+        <div class="faq-group active" id="faq-eligibility">
+          <details class="faq-item">
+            <summary>What are the requirements to qualify?<span class="chev">+</span></summary>
+            <div class="faq-a">Riders must be 55 or older, or have a medical condition that keeps them from driving.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Is any evaluation needed before I can use the service?<span class="chev">+</span></summary>
+            <div class="faq-a">Every applicant &mdash; both drivers and riders &mdash; goes through a background check.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Can you accommodate wheelchairs?<span class="chev">+</span></summary>
+            <div class="faq-a">We're not able to accommodate wheelchairs at this time, but members using walkers or canes are welcome.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Can a family member ride along as an escort?<span class="chev">+</span></summary>
+            <div class="faq-a">Yes &mdash; a caregiver can ride along with a member at no additional cost.</div>
+          </details>
+        </div>
+        <div class="faq-group" id="faq-cost">
+          <details class="faq-item">
+            <summary>What does the service cost?<span class="chev">+</span></summary>
+            <div class="faq-a">Membership includes an annual fee plus a prepaid mileage fee for each ride or destination.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Are discounts available?<span class="chev">+</span></summary>
+            <div class="faq-a">A senior discount applies to every ride, automatically.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Does my income affect my eligibility?<span class="chev">+</span></summary>
+            <div class="faq-a">No &mdash; income is not currently a factor in eligibility.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How does account prepayment work?<span class="chev">+</span></summary>
+            <div class="faq-a">Rides are paid for through a personal account. We'll reach out when your balance hits the threshold you set (minimum $10), and a minimum $40 recharge keeps your account active.</div>
+          </details>
+        </div>
+        <div class="faq-group" id="faq-access">
+          <details class="faq-item">
+            <summary>What's the service area?<span class="chev">+</span></summary>
+            <div class="faq-a">The Cedar Rapids metro area, including Marion and Hiawatha &mdash; roughly bounded by Tower Terrace Rd (N), Highway 13 (E), US 30 (S), and Stoney Point Rd (W).</div>
+          </details>
+          <details class="faq-item">
+            <summary>What hours does the service run?<span class="chev">+</span></summary>
+            <div class="faq-a">Rides run 24 hours a day, 7 days a week. Our office is staffed 9am&ndash;3pm, Monday through Friday, and we can't schedule new rides outside those hours.</div>
+          </details>
+          <details class="faq-item">
+            <summary>How far in advance do I need to book?<span class="chev">+</span></summary>
+            <div class="faq-a">Please let us know by noon the business day before you need a ride &mdash; the sooner, the better.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Is it door-to-door service?<span class="chev">+</span></summary>
+            <div class="faq-a">Yes. Door-to-door pickup and drop-off means you can wait comfortably at home until your driver arrives.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Do you go to social visits, or only medical appointments?<span class="chev">+</span></summary>
+            <div class="faq-a">Both, and everything in between &mdash; we'll take you wherever you need to go.</div>
+          </details>
+        </div>
+        <div class="faq-group" id="faq-other">
+          <details class="faq-item">
+            <summary>Can the driver wait while I'm inside?<span class="chev">+</span></summary>
+            <div class="faq-a">Drivers may have other rides scheduled after yours, but can wait up to 15 minutes as their schedule allows.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Can my pet come along?<span class="chev">+</span></summary>
+            <div class="faq-a">Contact the office ahead of time so we can line up a driver able to transport a secured pet.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Will the driver help carry packages?<span class="chev">+</span></summary>
+            <div class="faq-a">Our drivers are glad to help however they're able to.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section class="section" id="get-involved">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Get involved</span>
+        <h2>Riders Club runs on people like you</h2>
+        <p>We can't provide 24/7 service without generous donors and volunteers. Here are the ways people pitch in.</p>
+      </div>
+      <div class="involve-grid">
+        <div class="involve-card">
+          <span class="involve-tag tag-give">Give</span>
+          <h4>General Fund</h4>
+          <p>Keeps Riders Club running 24 hours a day, 7 days a week for every member who needs a ride.</p>
+          <a href="#donate-panel" class="btn btn-outline btn-sm btn-block">Donate</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-give">Give</span>
+          <h4>Ridership Fund</h4>
+          <p>Subsidizes rides directly, so members can get where they're going at a greatly reduced cost.</p>
+          <a href="#donate-panel" class="btn btn-outline btn-sm btn-block">Donate</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-give">Give</span>
+          <h4>Sponsor a Rider</h4>
+          <p>Become a Supporting Friend and cover another member's rides with our Plan &amp; Pay auto-refill.</p>
+          <a href="#donate-panel" class="btn btn-outline btn-sm btn-block">Learn More</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-give">Give</span>
+          <h4>Donate a Car</h4>
+          <p>Retiring your vehicle? A qualified dealer will buy it at market value and deposit funds into your ride account.</p>
+          <a href="#donate-panel" class="btn btn-outline btn-sm btn-block">Learn More</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-time">Time</span>
+          <h4>Become a Driver</h4>
+          <p>Give rides to seniors in your community, on a schedule that works for you.</p>
+          <a href="#apply-panel" class="btn btn-outline btn-sm btn-block">Apply to Drive</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-time">Time</span>
+          <h4>Office Help</h4>
+          <p>Support scheduling, member calls, and day-to-day operations from our Cedar Rapids office.</p>
+          <a href="#apply-panel" class="btn btn-outline btn-sm btn-block">Volunteer</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-time">Time</span>
+          <h4>Community Outreach</h4>
+          <p>Staff a display booth or sign-up table at local care facilities and community events.</p>
+          <a href="#apply-panel" class="btn btn-outline btn-sm btn-block">Volunteer</a>
+        </div>
+        <div class="involve-card">
+          <span class="involve-tag tag-time">Time</span>
+          <h4>Spread the Word</h4>
+          <p>Hand out flyers to neighbors, friends, and family who could use a reliable ride.</p>
+          <a href="#" class="btn btn-outline btn-sm btn-block">Get Flyers</a>
+        </div>
+      </div>
+
+      <div class="panel-grid" style="margin-top:56px;" id="donate-panel">
+        <div class="form-card">
+          <h3>Make a donation</h3>
+          <p class="sub">This is a preview of our donation form &mdash; no payment is processed here.</p>
+          <form onsubmit="return false;">
+            <div class="field">
+              <label for="fund">Choose a fund</label>
+              <select id="fund">
+                <option>Riders Club of America &mdash; General Fund</option>
+                <option>The Ridership Fund</option>
+                <option>Sponsor a Rider (Supporting Friend)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="amt">Donation amount</label>
+              <input id="amt" type="text" placeholder="$50">
+            </div>
+            <div class="field">
+              <label for="dname">Your name</label>
+              <input id="dname" type="text" placeholder="Full name">
+            </div>
+            <div class="field">
+              <label for="demail">Email</label>
+              <input id="demail" type="email" placeholder="you@example.com">
+            </div>
+            <button class="btn btn-amber btn-block" type="submit">Continue to Payment</button>
+            <p class="mock-note">Preview only &mdash; for a real donation, please call (319) 365-1511.</p>
+          </form>
+        </div>
+
+        <div id="apply-panel">
+          <h3>How volunteering works</h3>
+          <ul class="mini-list">
+            <li><span class="num">1</span> Submit the short interest form &mdash; takes about two minutes.</li>
+            <li><span class="num">2</span> We'll call to schedule your background check.</li>
+            <li><span class="num">3</span> Attend a brief orientation with our office team.</li>
+            <li><span class="num">4</span> Start driving on a schedule that fits your life.</li>
+          </ul>
+          <div class="form-card" style="margin-top:20px;">
+            <h3>Apply as a volunteer</h3>
+            <p class="sub">Preview only &mdash; nothing is submitted from this page.</p>
+            <form onsubmit="return false;">
+              <div class="field">
+                <label>I'd like to help as a</label>
+                <div class="radio-row">
+                  <label class="radio-opt"><input type="radio" name="role" checked> Driver</label>
+                  <label class="radio-opt"><input type="radio" name="role"> Office help</label>
+                  <label class="radio-opt"><input type="radio" name="role"> Outreach</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="vname">Full name</label>
+                <input id="vname" type="text" placeholder="Full name">
+              </div>
+              <div class="field">
+                <label for="vphone">Phone number</label>
+                <input id="vphone" type="tel" placeholder="(319) 555-0100">
+              </div>
+              <button class="btn btn-ink btn-block" type="submit">Submit Interest Form</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <section class="section section-alt" id="login">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Members</span>
+        <h2>Manage your rides online</h2>
+        <p>Schedule rides, check your account balance, and update your info.</p>
+      </div>
+      <div class="login-card">
+        <h3>Member Sign In</h3>
+        <p class="sub">Preview only &mdash; this form does not sign you in.</p>
+        <form onsubmit="return false;">
+          <div class="field">
+            <label for="uid">Email or Riders Club ID</label>
+            <input id="uid" type="text" placeholder="Email address or 16-digit ID">
+          </div>
+          <div class="field">
+            <label for="pw">Password</label>
+            <input id="pw" type="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;">
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="remember"><label for="remember">Remember me on this device</label>
+          </div>
+          <button class="btn btn-amber btn-block" type="submit">Sign In</button>
+          <div class="login-links">
+            <a href="#">Forgot your User ID?</a>
+            <a href="#">Forgot your password?</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow"><span class="dot"></span> Get in touch</span>
+        <h2>We're happy to answer your questions</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>Contact details</h3>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><strong>(319) 365-1511</strong><span>Office hours: Mon&ndash;Fri, 9am&ndash;3pm</span></div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div><strong>Admin@myridersclub.com</strong><span>We reply during office hours</span></div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11z"/><circle cx="12" cy="11" r="3"/></svg>
+            <div><strong>Cedar Rapids, Iowa</strong><span>Serving the metro area, Marion &amp; Hiawatha</span></div>
+          </div>
+          <div class="contact-line">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <div><strong>Book by noon, the day before</strong><span>The sooner you call, the more flexibility we have</span></div>
+          </div>
+        </div>
+        <div class="form-card">
+          <h3>Send us a message</h3>
+          <p class="sub">Preview only &mdash; for a fast answer, please call the office.</p>
+          <form onsubmit="return false;">
+            <div class="field">
+              <label for="cname">Name</label>
+              <input id="cname" type="text" placeholder="Full name">
+            </div>
+            <div class="field">
+              <label for="cemail">Return email address</label>
+              <input id="cemail" type="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="csubject">Subject</label>
+              <input id="csubject" type="text" placeholder="How can we help?">
+            </div>
+            <div class="field">
+              <label for="cmessage">Message</label>
+              <textarea id="cmessage" rows="4" placeholder="Tell us a bit about what you need&hellip;"></textarea>
+            </div>
+            <button class="btn btn-ink btn-block" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg width="34" height="34" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="21" fill="#DE9B33"/>
+            <path d="M11 26.5c2-6 5.5-11 11-11s9 5 11 11" stroke="#152B38" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <circle cx="14" cy="29" r="3" fill="#152B38"/><circle cx="30" cy="29" r="3" fill="#152B38"/>
+            <path d="M14 29h16" stroke="#152B38" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+          <strong style="color:#fff; font-family:'Lora',serif; font-size:18px;">Riders Club of America</strong>
+        </div>
+        <p style="max-width:32ch; color:#8FA5A3;">Connecting volunteer drivers and riders, 24 hours a day, 7 days a week, since 2008.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#who-we-are">Who We Are</a></li>
+          <li><a href="#service-area">Where We Ride</a></li>
+          <li><a href="#stories">Stories</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#get-involved">Donate</a></li>
+          <li><a href="#get-involved">Volunteer to Drive</a></li>
+          <li><a href="#get-involved">Sponsor a Rider</a></li>
+          <li><a href="#login">Member Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#">Documents</a></li>
+          <li><a href="#">Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Riders Club of America. A 501(c)(3) nonprofit organization.</span>
+      <span>(319) 365-1511 &nbsp;&middot;&nbsp; Admin@myridersclub.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  const navOverlay = document.getElementById('navOverlay');
+  function closeNav(){
+    mainNav.classList.remove('open');
+    navOverlay.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    navOverlay.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navOverlay.addEventListener('click', closeNav);
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  // FAQ tabs
+  const tabs = document.querySelectorAll('.faq-tab');
+  const groups = document.querySelectorAll('.faq-group');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-selected','false'));
+      tab.setAttribute('aria-selected','true');
+      groups.forEach(g => g.classList.remove('active'));
+      document.getElementById(tab.dataset.target).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

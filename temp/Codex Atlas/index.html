@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An atlas-style portfolio concept for Kyle Scheer's apps and web tools."
+    />
+    <title>Kyle Scheer - Field Atlas</title>
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="../portfoliodata.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="mark" href="#top" aria-label="Kyle Scheer Field Atlas">KS</a>
+      <nav aria-label="Atlas navigation">
+        <a href="#routes">Routes</a>
+        <a href="#apps">Apps</a>
+        <a href="#logbook">Logbook</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="kicker">Field atlas of free software</p>
+          <h1>Tools collected from trips, games, questions, and odd little problems.</h1>
+          <p>
+            A map of Kyle Scheer's apps and web projects, organized like an
+            expedition record. Each stop is free to use: no ads, no subscriptions,
+            and no locked features.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#routes">Start exploring</a>
+            <a class="button" href="mailto:hi@kylescheer.com">Send a note</a>
+          </div>
+        </div>
+
+        <aside class="map-panel" aria-label="Portfolio map summary">
+          <div class="map-grid" id="mapGrid"></div>
+          <div class="map-legend" id="mapLegend"></div>
+        </aside>
+      </section>
+
+      <section class="routes" id="routes" aria-labelledby="routesTitle">
+        <div class="section-title">
+          <p class="kicker">Routes</p>
+          <h2 id="routesTitle">Choose a trail through the work</h2>
+        </div>
+        <div class="route-tabs" id="routeTabs" aria-label="Project routes"></div>
+        <div class="route-layout">
+          <div class="route-list" id="routeList"></div>
+          <article class="route-preview" id="routePreview"></article>
+        </div>
+      </section>
+
+      <section class="apps" id="apps" aria-labelledby="appsTitle">
+        <div class="section-title">
+          <p class="kicker">Pocket kit</p>
+          <h2 id="appsTitle">Apps for the road</h2>
+        </div>
+        <div class="app-grid" id="appGrid"></div>
+      </section>
+
+      <section class="logbook" id="logbook" aria-labelledby="logbookTitle">
+        <div class="section-title">
+          <p class="kicker">Logbook</p>
+          <h2 id="logbookTitle">Every entry, newest first</h2>
+        </div>
+        <div class="logbook-list" id="logbookList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built as Codex concept: Field Atlas. Data comes from the existing portfolio file.</p>
+      <a href="https://ko-fi.com/scheerapps" target="_blank" rel="noopener">Support the work</a>
+    </footer>
+  </body>
+</html>
