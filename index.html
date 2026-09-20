@@ -17,7 +17,29 @@
     ></script>
     <script src="portfoliodata.js"></script>
     <link rel="stylesheet" href="styles.css" />
+<style>
+  #tutoring-banner {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+    border-radius: 12px;
+    padding: 16px 20px;
+  }
 
+  body.dark-mode #tutoring-banner {
+    background-color: #1d4ed8;
+  }
+
+  #tutoring-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  #tutoring-banner a:hover {
+    color: #dbeafe;
+  }
+</style>
   </head>
   <body class="text-center">
     <button class="dark-mode-toggle" id="darkModeToggle">
@@ -34,7 +56,27 @@
         <h1 class="minimal-header">Hi, I'm Kyle Scheer.</h1>
         <div class="minimal-context">Welcome to my site.</div>
       </header>
+    <!-- Top Announcement Banner for Tutoring Services -->
+<div id="tutoring-banner">
+  <div>
+    <span>
+      🎓 <strong>Offering SAT / ACT / GRE tutoring in Warsaw &amp; online</strong><br />Limited 1-on-1 spots.
 
+    </span><br><br>
+    <a href="tutoring.html" class="font-bold whitespace-nowrap">
+      Learn More &rarr;
+    </a>
+  </div>
+</div>
+<div id="note-other">
+        <div class="minimal-section-title">About Me</div>
+        <p class="mb-1">
+          I'm currently a graduate student at the University of Warsaw, pursuing a master's degree in <a href="https://www.nohanet.org/masters" target="_blank" rel="noopener noreferrer">international humanitarian action</a>. I have a side business making websites and providing tech support for individuals and organizations. I also tutor standardized test preparation (ACT/SAT/GRE) and English (ESL).
+        </p><br>
+        <p class="mb-1">
+          I travel a lot internationally, and am involved in the disaster response and outdoor education space.
+        </p>
+      </div>
       <div id="note-manifesto">
         <div class="minimal-section-title">My Philosophy</div>
         <p id="manifesto-intro" class="mb-1">
@@ -80,16 +122,7 @@
         <button id="more-projects-button">Show All Projects</button>
       </div>
 
-      <div id="note-other">
-        <div class="minimal-section-title">Other Stuff</div>
-        <p class="mb-1">
-          I have a side business making websites, helping with digital organization, and providing tech support for
-          individuals and organizations. I also tutor English (ESL) and standardized test preparation (ACT/SAT/GRE).
-        </p><br>
-        <p class="mb-1">
-          I travel a lot internationally, and am involved in the disaster response and outdoor education space.
-        </p>
-      </div>
+      
 
       <hr />
       <footer class="mt-12 text-center">
