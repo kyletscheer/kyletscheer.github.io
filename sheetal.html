@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2eb">
+  <meta name="description" content="Help Sheetal and me plan a lovely first date in Warsaw.">
+  <title>Sheetal & me — a little Warsaw date plan</title>
+  <style>
+    :root{--ink:#25251f;--muted:#706e64;--paper:#f7f2eb;--card:#fffdf9;--line:#e9e1d6;--berry:#b94e58;--berry-dark:#933b46;--peach:#f4ded5;--sage:#dce7d8;--lav:#e9e2f1;--yellow:#f2e7be;--shadow:0 20px 60px #50422e12}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 10%,#f6e8dc 0,transparent 32%),radial-gradient(ellipse at 90% 80%,#e9eddf 0,transparent 30%),var(--paper);color:var(--ink);font:16px/1.55 ui-rounded,"SF Pro Rounded",system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+    button,input,textarea{font:inherit}button{cursor:pointer}.shell{width:min(100% - 32px,760px);margin:0 auto;padding:30px 0 58px}.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;color:var(--muted);font-size:13px;font-weight:650;letter-spacing:.04em}.brand{display:flex;align-items:center;gap:9px}.brand-mark{display:grid;place-items:center;width:30px;height:30px;background:var(--berry);color:white;border-radius:11px;font-size:16px;transform:rotate(-7deg)}.city{border:1px solid var(--line);border-radius:99px;padding:5px 11px;background:#ffffff91}
+    .hero{padding:27px 30px;background:var(--card);border:1px solid #fff;border-radius:23px;box-shadow:var(--shadow)}.hero h1{font:500 clamp(24px,5vw,31px)/1.25 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0;max-width:510px}.question{font:500 clamp(25px,5vw,34px)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 7px}
+    .quiz{margin-top:14px;background:var(--card);border:1px solid #fff;border-radius:23px;box-shadow:var(--shadow);padding:24px 28px 26px}.question{font:500 clamp(25px,5vw,34px)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 7px}.hint{color:var(--muted);font-size:14px;margin:0 0 20px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.option{position:relative;display:flex;align-items:center;gap:11px;text-align:left;width:100%;min-height:58px;border:1px solid var(--line);border-radius:15px;padding:11px 14px;background:#fffefa;color:var(--ink);transition:transform .15s,border-color .15s,background .15s}.option:hover{transform:translateY(-1px);border-color:#d7a3a0}.option[aria-pressed="true"]{border:1.5px solid var(--berry);background:#fff5f2;box-shadow:0 0 0 2px #b94e5810}.option:disabled{opacity:.45;cursor:not-allowed;background:#f1eee9}.option .emoji{font-size:21px;line-height:1}.option .label{font-size:14px;font-weight:650;line-height:1.25}.option .check{margin-left:auto;color:var(--berry);font-weight:900;opacity:0}.option[aria-pressed="true"] .check{opacity:1}.field{display:grid;gap:7px;margin-top:14px}.field label{font-size:13px;font-weight:700}.field textarea,.field input{width:100%;border:1px solid var(--line);background:#fffefa;border-radius:13px;padding:12px 14px;color:var(--ink);outline:none}.field textarea{resize:vertical;min-height:82px}.field input:focus,.field textarea:focus{border-color:var(--berry);box-shadow:0 0 0 3px #b94e5817}.field small{color:var(--muted);font-size:12px}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.btn{border:0;border-radius:13px;padding:12px 18px;font-weight:750;transition:transform .15s,background .15s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--berry);color:white}.btn-primary:hover{background:var(--berry-dark)}.btn-secondary{background:#f1ece4;color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+    .result{display:none;margin-top:22px;background:var(--card);border:1px solid #fff;border-radius:26px;box-shadow:var(--shadow);padding:30px}.result.show{display:block}.result-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.result h2{font:500 clamp(30px,6vw,42px)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.03em;margin:8px 0}.result-intro{color:var(--muted);margin:0 0 20px}.stamp{flex:none;width:58px;height:58px;border-radius:19px;background:var(--peach);display:grid;place-items:center;font-size:26px;transform:rotate(5deg)}.summary-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.summary-item{border:1px solid var(--line);border-radius:15px;padding:12px 14px;background:#fffefa}.summary-item.wide{grid-column:1/-1}.summary-label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;margin-bottom:4px}.summary-value{font-weight:650;font-size:14px;overflow-wrap:anywhere}.result-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.copy-status{min-height:20px;color:#42714d;font-size:13px;font-weight:650;margin-top:8px}.edit-link{border:0;background:none;color:var(--berry-dark);font-weight:750;padding:7px 0;text-decoration:underline;text-underline-offset:3px}.share-note{background:#f5f0e9;border-radius:14px;padding:12px 14px;color:var(--muted);font-size:13px;margin-top:16px}.share-note strong{color:var(--ink)}.hidden{display:none!important}
+    @media(max-width:560px){.shell{width:min(100% - 22px,760px);padding-top:16px}.hero{padding:23px 20px;border-radius:20px}.quiz{margin-top:11px;padding:19px 17px 20px;border-radius:20px}.options{grid-template-columns:1fr}.option{min-height:53px}.question{font-size:28px}.result{padding:23px 18px;border-radius:20px}.summary-list{grid-template-columns:1fr}.summary-item.wide{grid-column:auto}.result-top{gap:8px}.stamp{width:48px;height:48px;border-radius:16px}.btn{padding:12px 14px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="hero" id="intro">
+      <h1>Hi Sheetal! I have a few quick questions as I plan our date.</h1>
+    </header>
+    <section class="quiz hidden" id="quiz" aria-live="polite">
+      <div id="step-content"></div>
+      <div class="nav"><button class="btn btn-secondary" id="back-btn" type="button">← Back</button><button class="btn btn-primary" id="next-btn" type="button">Next →</button></div>
+    </section>
+    <div class="nav" id="start-nav"><span></span><button class="btn btn-primary" id="start-btn" type="button">Start →</button></div>
+    <section class="result" id="result" aria-live="polite"></section>
+  </main>
+  <script>
+    const steps = [
+      {key:'availability',title:'When are you free?',hint:'I can’t do Saturday morning, but the rest of the weekend is open.',type:'multi',options:[['🌤️','Saturday morning','Saturday morning',false,true],['☀️','Saturday afternoon','Saturday afternoon'],['🌙','Saturday evening','Saturday evening'],['🌼','Sunday morning','Sunday morning'],['☀️','Sunday afternoon','Sunday afternoon'],['🌙','Sunday evening','Sunday evening']]},
+      {key:'neighborhood',title:'Neighborhood preference?',hint:'Anywhere you’d especially like to go?',type:'text',placeholder:'e.g. Powiśle, Śródmieście, or flexible',optional:true},
+      {key:'duration',title:'How long you thinking?',hint:'We can always play it by ear.',type:'single',options:[['⏱️','About an hour','About an hour'],['🍰','A couple of hours','A couple of hours'],['🌙','No set end time','No set end time'],['🤷','Let’s see how it goes','Play it by ear']]},
+      {key:'needs',title:'Anything else I should know?',hint:'I don’t eat meat, I’m terrified of water, I’m a high-end 5-star restaurant kind of girl only, etc...',type:'text',placeholder:'',optional:true}
+    ];
+    const answers = Object.fromEntries(steps.map(s=>[s.key, s.type==='multi'?[]:'']));
+    let current = 0;
+    const stepContent=document.getElementById('step-content'), backBtn=document.getElementById('back-btn'), nextBtn=document.getElementById('next-btn');
+    document.getElementById('start-btn').addEventListener('click',()=>{document.getElementById('intro').classList.add('hidden');document.getElementById('start-nav').classList.add('hidden');document.getElementById('quiz').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})});
+    const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function render(){
+      const s=steps[current];
+      let body='';
+      if(s.type==='single'||s.type==='multi') body=`<div class="options">${s.options.map(([emoji,label,value,,unavailable])=>{const selected=s.type==='multi'?answers[s.key].includes(value):answers[s.key]===value;const disabled=unavailable===true;return `<button type="button" class="option" aria-pressed="${selected}" data-value="${esc(value)}" ${disabled?'disabled aria-label="Saturday morning — unavailable"':''}><span class="emoji">${emoji}</span><span class="label">${label}${disabled?' · unavailable':''}</span><span class="check">✓</span></button>`}).join('')}</div>`;
+      else body=`<div class="field"><textarea id="answer-${s.key}" aria-label="${esc(s.title)}" placeholder="${esc(s.placeholder)}" maxlength="220">${esc(answers[s.key])}</textarea></div>`;
+      stepContent.innerHTML=`<h2 class="question">${s.title}</h2><p class="hint">${s.hint}</p>${body}`;
+      stepContent.querySelectorAll('.option').forEach(button=>button.addEventListener('click',()=>{
+        const value=button.dataset.value;
+        if(s.type==='multi'){const list=answers[s.key];answers[s.key]=list.includes(value)?list.filter(x=>x!==value):[...list,value];}
+        else answers[s.key]=value;
+        render();
+      }));
+      const area=stepContent.querySelector('textarea');if(area)area.addEventListener('input',()=>answers[s.key]=area.value);
+      backBtn.classList.toggle('hidden',current===0);nextBtn.textContent=current===steps.length-1?'All done':'Next →';
+    }
+    function friendly(key){const val=answers[key];if(Array.isArray(val))return val.length?val.join(', '):'No preference shared';return String(val).trim()||'Not specified';}
+    function makeSummary(){
+      const rows=[['When',friendly('availability')],['Neighborhood',friendly('neighborhood')],['How long',friendly('duration')],['Anything else',friendly('needs')]];
+      const plain=['A few notes for our Warsaw date ✨',...rows.map(([k,v])=>`${k}: ${v}`)].join('\n');
+      const result=document.getElementById('result');result.innerHTML=`<div class="result-top"><div><h2>nice!</h2></div></div><div class="summary-list">${rows.map(([k,v])=>`<div class="summary-item"><span class="summary-label">${k}</span><div class="summary-value">${esc(v)}</div></div>`).join('')}</div><div class="result-actions"><button class="btn btn-primary" id="copy-btn" type="button">Copy answers</button><button class="edit-link" id="edit-btn" type="button">← Change answers</button></div><div class="copy-status" id="copy-status" role="status"></div><div class="share-note">Copy the answers and put them in our chat.</div>`;
+      document.getElementById('quiz').classList.add('hidden');result.classList.add('show');document.getElementById('intro').classList.add('hidden');document.getElementById('start-nav').classList.add('hidden');
+      document.getElementById('copy-btn').onclick=async()=>{try{await navigator.clipboard.writeText(plain);status('Copied — ready to paste!')}catch{fallbackCopy(plain)}};
+      document.getElementById('edit-btn').onclick=()=>{result.classList.remove('show');document.getElementById('quiz').classList.remove('hidden');current=steps.length-1;render();window.scrollTo({top:0,behavior:'smooth'})};
+      window.history.replaceState(null,'',location.pathname+location.search);
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function status(text){document.getElementById('copy-status').textContent=text}
+    function fallbackCopy(text){const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();try{document.execCommand('copy');status('Copied — ready to paste!')}catch{status('Copy unavailable. You can select and copy the summary manually.')}area.remove()}
+    nextBtn.addEventListener('click',()=>{if(current<steps.length-1){current++;render();window.scrollTo({top:document.getElementById('quiz').offsetTop-12,behavior:'smooth'})}else makeSummary()});
+    backBtn.addEventListener('click',()=>{if(current>0){current--;render();window.scrollTo({top:document.getElementById('quiz').offsetTop-12,behavior:'smooth'})}});
+    function loadShared(){const match=location.hash.match(/answers=([^&]+)/);if(!match)return;try{const parsed=JSON.parse(decodeURIComponent(escape(atob(decodeURIComponent(match[1])))));for(const s of steps){if(typeof parsed[s.key]===(s.type==='multi'?'object':'string'))answers[s.key]=parsed[s.key]}current=steps.length-1;render();makeSummary()}catch{}}
+    render();loadShared();
+  </script>
+</body>
+</html>
