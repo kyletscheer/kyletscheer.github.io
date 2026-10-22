@@ -23,17 +23,17 @@ window.portfolioData = {
   // Note: The content you provided had multiple repeated app entries. I condensed them to unique entries.
   apps: [
     /*{
-      title: "RunFit",
-      description: "A random workout generator to keep your runs fun and varied.",
-      imageURL: "url_to_runfit_screenshot",
-      link: "#" // Placeholder
-    },
-    {
       title: "LingoLeap",
       description: "A phrase learning flashcard app designed for travelers on the go.",
       imageURL: "url_to_lingoleap_screenshot",
       link: "#" // Placeholder
     },*/
+    {
+      title: "RandoRun",
+      description: "A random workout generator to keep your runs fun and varied.",
+      imageURL: "images/randorun_new.mp4",
+      link: "https://www.kylescheer.com/apps/randorun" // Placeholder
+    },
   {
       title: "Unit Sharp App - Convert Measurements Game (iOS)",
       description:
