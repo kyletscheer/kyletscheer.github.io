@@ -28,7 +28,13 @@ window.portfolioData = {
       imageURL: "url_to_lingoleap_screenshot",
       link: "#" // Placeholder
     },*/
-    {
+{
+      title: "KindFocus",
+      description: "A better app blocker, made with care.",
+      imageURL: "images/kindfocus_new.mp4",
+      link: "https://www.kylescheer.com/apps/kindfocus" // Placeholder
+    },    
+{
       title: "RandoRun",
       description: "A random workout generator to keep your runs fun and varied.",
       imageURL: "images/randorun_new.mp4",
