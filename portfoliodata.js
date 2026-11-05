@@ -72,6 +72,14 @@ window.portfolioData = {
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
     {
+      title: "Random Walk Laboratory",
+      date: "Nov, 2026",
+      description:
+        "Watch dots go for some random walks.",
+      link: "https://www.kylescheer.com/randomwalk",
+      screenshotURL: "images/randomwalk_new.mp4",
+    },
+    {
       title: "RankIt - Multi-Method Decision-Making Tool",
       date: "June, 2026",
       description:
