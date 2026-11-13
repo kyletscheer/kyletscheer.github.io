@@ -3,171 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle Scheer // GRE, SAT & ACT Tutoring Warsaw</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Kyle Scheer // GRE, SAT &amp; ACT Tutoring Warsaw</title>
+  <meta name="description" content="1-on-1 GRE, SAT and ACT tutoring in Warsaw and online, plus academic English and application essay help. 337 GRE, 800 SAT Math, former ACT, Inc. intern." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg: #f4f5f3;
+      --card: #ffffff;
+      --text: #161a19;
+      --muted: #5f6866;
+      --line: #dfe3e0;
+      --hover: #eaeeec;
+      --accent: #0f766e;
+      --serif: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+      --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      color-scheme: light;
+    }
+    :root[data-theme="dark"] {
+      --bg: #101413;
+      --card: #171c1b;
+      --text: #e6ebe9;
+      --muted: #8f9997;
+      --line: #263030;
+      --hover: #1c2322;
+      --accent: #2dd4bf;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
     body {
-      font-family: "Roboto Mono", monospace;
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16.5px/1.65 var(--sans); -webkit-font-smoothing: antialiased;
+      transition: background .25s, color .25s;
     }
+    a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    main { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 3rem; }
+    .label { font-family: var(--mono); font-size: .74rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+
+    /* Top bar */
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; gap: 1rem; }
+    .top a { text-decoration: none; }
+    .theme {
+      background: none; border: 1px solid var(--line); color: var(--muted);
+      width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: grid; place-items: center;
+    }
+    .theme:hover { color: var(--text); }
+
+    /* Hero */
     .badge {
-      display: inline-block;
-      background-color: var(--light-accent, #3a70ff);
-      color: #ffffff;
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 0.8rem;
+      display: inline-block; font-family: var(--mono); font-size: .74rem; letter-spacing: .05em;
+      border: 1px solid var(--line); background: var(--card); color: var(--text);
+      padding: .3rem .8rem; border-radius: 999px; margin-bottom: 1.2rem;
     }
-    .cta-button {
-      display: inline-block;
-      background-color: var(--light-accent, #3a70ff);
-      color: #ffffff;
-      font-weight: bold;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.2s ease;
+    .badge::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-right: .55rem; vertical-align: 1px; }
+    h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.1rem, 5.5vw, 3.1rem); line-height: 1.06; letter-spacing: -.03em; margin: 0 0 1rem; max-width: 18ch; }
+    h1 span { color: var(--accent); }
+    .lede { color: var(--muted); font-size: 1.1rem; max-width: 52ch; margin: 0 0 1.6rem; }
+    .btn {
+      display: inline-block; background: var(--accent); color: var(--bg); text-decoration: none;
+      padding: .75rem 1.3rem; border-radius: 999px; font-weight: 600; transition: opacity .15s, transform .15s;
     }
-    .cta-button:hover { background-color: #2563eb; }
-    .credentials-line {
-      margin-top: 14px;
-      font-size: 0.85rem;
-      line-height: 1.5;
+    .btn:hover { color: var(--bg); opacity: .9; transform: translateY(-1px); }
+
+    .creds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .cred { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; }
+    .cred b { display: block; font-family: var(--serif); font-size: 1.7rem; line-height: 1.1; letter-spacing: -.03em; }
+    .cred span { display: block; margin-top: .35rem; }
+    @media (max-width: 600px) { .creds { grid-template-columns: 1fr; } .cred { display: flex; align-items: baseline; gap: .9rem; } .cred span { margin: 0; } }
+
+    /* Sections */
+    section { margin-top: 4rem; }
+    h2 { font-family: var(--serif); font-weight: 700; font-size: 1.75rem; letter-spacing: -.03em; margin: 0 0 1.2rem; }
+    .prose p { margin: 0 0 1rem; max-width: 62ch; }
+    .prose strong { font-weight: 600; }
+
+    /* Steps */
+    .steps { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: s; }
+    .steps li {
+      counter-increment: s; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.1rem 1.2rem;
+      font-size: .94rem; color: var(--muted); line-height: 1.55;
     }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 16px;
-      padding: 16px 0;
-      border-bottom: 1px solid #e2e8f0;
+    .steps li::before { content: "0" counter(s); display: block; font-family: var(--mono); font-size: .74rem; color: var(--accent); margin-bottom: .5rem; }
+    .steps strong { display: block; color: var(--text); font-weight: 600; font-size: 1rem; margin-bottom: .3rem; }
+    @media (max-width: 700px) { .steps { grid-template-columns: 1fr; } }
+    .prose .closing { margin-top: 2rem; }
+
+    /* Rates */
+    .rates { border-top: 1px solid var(--line); }
+    .rate { display: flex; justify-content: space-between; gap: 1.5rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+    .rate h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 .3rem; }
+    .rate h3 small { font-weight: 400; color: var(--muted); font-size: .95rem; }
+    .rate p { margin: 0; color: var(--muted); font-size: .92rem; max-width: 52ch; }
+    .price { text-align: right; white-space: nowrap; font-family: var(--serif); font-size: 1.5rem; font-weight: 700; letter-spacing: -.03em; line-height: 1.2; color: var(--accent); }
+    .price small { display: block; font-family: var(--mono); font-size: .74rem; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+    @media (max-width: 560px) { .rate { flex-direction: column; gap: .6rem; } .price { text-align: left; } }
+
+    /* Contact */
+    .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact a {
+      display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      padding: 1.1rem 1.2rem; transition: border-color .2s, transform .2s;
     }
-    body.dark-mode .price-row { border-color: #404040; }
-    .price-row:last-child { border-bottom: none; }
-    .price-amount { color: #10b981; font-weight: bold; }
-    .price-amount .usd {
-      font-weight: normal;
-      font-size: 0.8rem;
-      color: #64748b;
-    }
-    body.dark-mode .price-amount .usd { color: #94a3b8; }
-    .muted { color: #4b5563; }
-    body.dark-mode .muted { color: #9ca3af; }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 0;
-    }
-    .contact-row .contact-label {
-      font-weight: bold;
-      width: 92px;
-      flex-shrink: 0;
-    }
-    .contact-row a {
-      color: var(--light-accent, #3a70ff);
-      text-decoration: underline;
-    }
-    ul.feature-list {
-      list-style-type: disc;
-      padding-left: 1.25rem;
-    }
-    ul.feature-list li {
-      margin-bottom: 0.5rem;
-    }
+    .contact a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .contact a strong { display: block; font-size: 1.02rem; font-weight: 500; margin-top: .25rem; word-break: break-word; }
+    @media (max-width: 560px) { .contact { grid-template-columns: 1fr; } }
+
+    /* Footer */
+    footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .9rem; }
   </style>
 </head>
-<body class="p-6 md:p-12">
-  <div class="max-w-xl mx-auto">
-    <div class="mb-6">
-      <a href="index.html" class="minimal-link">&larr; Back to Main Portfolio</a>
+<body>
+  <main>
+    <div class="top">
+      <a class="label" href="index.html">&larr; Kyle Scheer</a>
+      <button class="theme" id="themeBtn" aria-label="Toggle dark mode">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
     </div>
 
-    <header class="text-center mb-10">
-      <div class="badge mb-3">🎓 A few Warsaw spots open this term</div>
-      <h1 class="text-2xl md:text-3xl font-bold mb-3">Maximize Your GRE, SAT, or ACT Score</h1>
-      <p class="muted mb-5">
-        Personalized 1-on-1 test prep in Warsaw (in-person) or online worldwide.
-      </p>
-      <a href="mailto:hi@kylescheer.com" class="cta-button">Reach out at hi@kylescheer.com</a>
-      <p class="credentials-line muted font-medium">
-        337 GRE (99th Percentile) &middot; Perfect 800 SAT Math &middot; Former ACT, Inc. Intern
-      </p>
+    <header>
+      <div class="badge">A few Warsaw spots open this term</div>
+      <h1>Maximize your GRE, SAT, or ACT score<span>.</span></h1>
+      <p class="lede">Personalized 1-on-1 test prep in Warsaw (in-person) or online worldwide.</p>
+      <a class="btn" href="mailto:hi@kylescheer.com">Reach out at hi@kylescheer.com</a>
+
+      <div class="creds">
+        <div class="cred"><b>337</b><span class="label">GRE · 99th percentile</span></div>
+        <div class="cred"><b>800</b><span class="label">Perfect SAT Math</span></div>
+        <div class="cred"><b>ACT, Inc.</b><span class="label">Former intern</span></div>
+      </div>
     </header>
 
-    <section class="mb-8 text-sm leading-relaxed">
-      <p class="mb-4">
+    <section class="prose">
+      <h2>How it works</h2>
+      <p>
         I help high schoolers applying to university (SAT/ACT) and prospective graduate students (GRE) build clear strategies to reach their target scores. In-person sessions take place around central Warsaw (Śródmieście, Mokotów, cafes/libraries, or client homes), as well as virtually via Zoom.
       </p>
-      
-      <p class="mb-4">
+      <p>
         To ensure every student gets my full attention and a tailored roadmap, <strong>I only take 4–5 regular students at a time</strong>.
       </p>
 
-      <h3 class="font-bold mb-2 text-base">How We'll Work Together:</h3>
-      <ul class="feature-list mb-4 muted">
-        <li><strong>Diagnostic & Strategy:</strong> We start with a full diagnostic test to pinpoint high-leverage areas in both Quantitative and Verbal sections.</li>
-        <li><strong>Custom Study Plan:</strong> I provide official practice resources and a week-by-week plan built around your busy schedule and target score.</li>
-        <li><strong>Focused 1-on-1 Sessions:</strong> We spend session time dismantling challenge areas, mastering timing strategies, and building confidence to manage test anxiety.</li>
-      </ul>
+      <ol class="steps">
+        <li><strong>Diagnostic &amp; Strategy</strong>We start with a full diagnostic test to pinpoint high-leverage areas in both Quantitative and Verbal sections.</li>
+        <li><strong>Custom Study Plan</strong>I provide official practice resources and a week-by-week plan built around your busy schedule and target score.</li>
+        <li><strong>Focused 1-on-1 Sessions</strong>We spend session time dismantling challenge areas, mastering timing strategies, and building confidence to manage test anxiety.</li>
+      </ol>
 
-      <p>
+      <p class="closing">
         I'm patient, structured, and specialize in working with students balancing heavy course loads, demanding jobs, or test-day nerves.
       </p>
     </section>
 
-    <section class="mb-10">
-      <h2 class="text-xs uppercase font-bold muted mb-2">Rates & Services</h2>
-      
-      <div class="price-row">
-        <div>
-          <div class="font-bold">Test Prep <span class="font-normal muted">(GRE / SAT / ACT)</span></div>
-          <div class="muted text-xs mt-1">
-            Tailored 1-on-1 coaching for grad school hopefuls (GRE) and high schoolers (SAT/ACT). Includes diagnostic analysis and custom homework plans. Typically 1-hour weekly sessions.
+    <section>
+      <h2>Rates &amp; services</h2>
+      <div class="rates">
+        <div class="rate">
+          <div>
+            <h3>Test Prep <small>(GRE / SAT / ACT)</small></h3>
+            <p>Tailored 1-on-1 coaching for grad school hopefuls (GRE) and high schoolers (SAT/ACT). Includes diagnostic analysis and custom homework plans. Typically 1-hour weekly sessions.</p>
           </div>
+          <div class="price">400 PLN/hr<small>~$100</small></div>
         </div>
-        <span class="price-amount whitespace-nowrap">400 PLN/hr <span class="usd">(~$100)</span></span>
-      </div>
-
-      <div class="price-row">
-        <div>
-          <div class="font-bold">Academic English & Application Essays</div>
-          <div class="muted text-xs mt-1">
-            For university students, researchers, and professionals looking to polish academic writing, presentations, or Grad School Statements of Purpose (SOP).
+        <div class="rate">
+          <div>
+            <h3>Academic English &amp; Application Essays</h3>
+            <p>For university students, researchers, and professionals looking to polish academic writing, presentations, or Grad School Statements of Purpose (SOP).</p>
           </div>
+          <div class="price">200 PLN/hr<small>~$50</small></div>
         </div>
-        <span class="price-amount whitespace-nowrap">200 PLN/hr <span class="usd">(~$50)</span></span>
       </div>
     </section>
 
-    <section class="mb-10 text-sm leading-relaxed">
-      <h2 class="text-xs uppercase font-bold muted mb-2">About Me</h2>
+    <section class="prose">
+      <h2>About me</h2>
       <p>
         I'm an American educator with over two years of teaching experience. Having earned a 337 on the GRE (99th percentile), a perfect 800 on SAT Math, and completed a summer internship at <strong>ACT, Inc.</strong>, I understand standardized test design from the inside out. I am currently based in Warsaw completing a NOHA Joint Master's in International Humanitarian Action.
       </p>
     </section>
 
-    <section class="mb-10 text-sm">
-      <h2 class="text-xs uppercase font-bold muted mb-2">Contact & Booking</h2>
-      <div class="contact-row">
-        <span class="contact-label">📧 Email</span>
-        <a href="mailto:hi@kylescheer.com">hi@kylescheer.com</a>
-      </div>
-      <div class="contact-row">
-        <span class="contact-label">📱 WhatsApp</span>
-        <a href="https://wa.me/13192138187" target="_blank" rel="noopener">+1 319&#8209;213&#8209;8187</a>
+    <section>
+      <h2>Contact &amp; booking</h2>
+      <div class="contact">
+        <a href="mailto:hi@kylescheer.com"><span class="label">Email</span><strong>hi@kylescheer.com</strong></a>
+        <a href="https://wa.me/13192138187" target="_blank" rel="noopener"><span class="label">WhatsApp</span><strong>+1 319&#8209;213&#8209;8187</strong></a>
       </div>
     </section>
 
-    <footer class="text-center text-xs muted">
-      <a href="index.html" class="minimal-link">&larr; Return to Kyle Scheer's Portfolio</a>
-      <p class="mt-4">&copy; 2026 Kyle Scheer. All rights reserved.</p>
+    <footer>
+      <a href="index.html">&larr; Return to Kyle Scheer's portfolio</a>
+      <span>&copy; <span id="yr"></span> Kyle Scheer. All rights reserved.</span>
     </footer>
-  </div>
+  </main>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      let saved = null;
+      try { saved = localStorage.getItem("ks-theme"); } catch (e) {}
+      root.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.getElementById("themeBtn").onclick = () => {
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+        try { localStorage.setItem("ks-theme", root.dataset.theme); } catch (e) {}
+      };
+      document.getElementById("yr").textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>

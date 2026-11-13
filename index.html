@@ -1,232 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO Basics -->
-    <meta name="description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
-    <meta name="author" content="Kyle Scheer" />
-    <title>Kyle Scheer – Free Apps, Games &amp; Web Tools (No Ads)</title>
-    <link rel="icon" href="favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script
-      src="https://kit.fontawesome.com/016db943e9.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script src="portfoliodata.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-<style>
-  #tutoring-banner {
-    background-color: #2563eb;
-    color: #ffffff;
-    font-family: "Roboto Mono", monospace;
-    text-align: center;
-    border-radius: 12px;
-    padding: 16px 20px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kyle Scheer – Free Apps, Games &amp; Web Tools (No Ads)</title>
+  <meta name="description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
+  <meta name="author" content="Kyle Scheer" />
+  <link rel="canonical" href="https://kylescheer.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kyle Scheer" />
+  <meta property="og:title" content="Kyle Scheer – Free Apps, Games &amp; Web Tools (No Ads)" />
+  <meta property="og:description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
+  <meta property="og:url" content="https://kylescheer.com/" />
+  <meta property="og:image" content="https://kylescheer.com/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kyle Scheer – Free Apps, Games &amp; Web Tools (No Ads)" />
+  <meta name="twitter:description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
+  <meta name="twitter:image" content="https://kylescheer.com/images/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Kyle Scheer",
+        "url": "https://kylescheer.com/",
+        "description": "Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar's Dice calculator and more. No ads, no subscriptions."
+      },
+      {
+        "@type": "Person",
+        "name": "Kyle Scheer",
+        "url": "https://kylescheer.com/",
+        "jobTitle": "Independent app and web developer",
+        "sameAs": [
+          "https://github.com/kyletscheer",
+          "https://medium.com/@kyletscheer",
+          "https://ko-fi.com/scheerapps"
+        ]
+      }
+    ]
   }
-
-  body.dark-mode #tutoring-banner {
-    background-color: #1d4ed8;
-  }
-
-  #tutoring-banner a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  #tutoring-banner a:hover {
-    color: #dbeafe;
-  }
-</style>
-    <!-- SEO + social previews -->
-    <link rel="canonical" href="https://kylescheer.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Kyle Scheer" />
-    <meta property="og:title" content="Kyle Scheer – Free Apps, Games &amp;amp; Web Tools (No Ads)" />
-    <meta property="og:description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
-    <meta property="og:url" content="https://kylescheer.com/" />
-    <meta property="og:image" content="https://kylescheer.com/images/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kyle Scheer – Free Apps, Games &amp;amp; Web Tools (No Ads)" />
-    <meta name="twitter:description" content="Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar&#x27;s Dice calculator and more. No ads, no subscriptions." />
-    <meta name="twitter:image" content="https://kylescheer.com/images/og-image.png" />
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "name": "Kyle Scheer",
-      "url": "https://kylescheer.com/",
-      "description": "Free iPhone apps, browser games and web tools by Kyle Scheer: an app blocker, a running workout randomizer, unit and currency conversion games, a Liar's Dice calculator and more. No ads, no subscriptions."
-    },
-    {
-      "@type": "Person",
-      "name": "Kyle Scheer",
-      "url": "https://kylescheer.com/",
-      "jobTitle": "Independent app and web developer",
-      "sameAs": [
-        "https://github.com/kyletscheer",
-        "https://medium.com/@kyletscheer",
-        "https://ko-fi.com/scheerapps"
-      ]
+  </script>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="portfoliodata.js"></script>
+  <style>
+    :root {
+      --bg: #f4f5f3;
+      --card: #ffffff;
+      --text: #161a19;
+      --muted: #5f6866;
+      --line: #dfe3e0;
+      --hover: #eaeeec;
+      --accent: #0f766e;
+      --serif: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+      --sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+      color-scheme: light;
     }
-  ]
-}
-</script>
-  </head>
-  <body class="text-center">
-    <button class="dark-mode-toggle" id="darkModeToggle">
-      Toggle Dark Mode
-    </button>
+    :root[data-theme="dark"] {
+      --bg: #101413;
+      --card: #171c1b;
+      --text: #e6ebe9;
+      --muted: #8f9997;
+      --line: #263030;
+      --hover: #1c2322;
+      --accent: #2dd4bf;
+      color-scheme: dark;
+    }
 
-    <div class="max-w-4xl mx-auto">
-      <header>
-        <img
-          src="images/kyle.webp"
-          alt="Photo of Kyle Scheer"
-          class="text-center profile-image"
-        />
-        <h1 class="minimal-header">Hi, I'm Kyle Scheer.</h1>
-        <div class="minimal-context">Welcome to my site.</div>
-      </header>
-    <!-- Top Announcement Banner for Tutoring Services -->
-<div id="tutoring-banner">
-  <div>
-    <span>
-      🎓 <strong>Offering SAT / ACT / GRE tutoring in Warsaw &amp; online</strong><br />Limited 1-on-1 spots.
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16.5px/1.65 var(--sans); -webkit-font-smoothing: antialiased;
+      transition: background .25s, color .25s;
+    }
+    a { color: inherit; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); text-underline-offset: 3px; }
+    a:hover { color: var(--accent); text-decoration-color: currentColor; }
+    main { max-width: 880px; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+    .label { font-family: var(--mono); font-size: .74rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
 
-    </span><br><br>
-    <a href="tutoring.html" class="font-bold whitespace-nowrap">
-      Learn More &rarr;
-    </a>
-  </div>
-</div>
-<div id="note-other">
-        <div class="minimal-section-title">About Me</div>
-        <p class="mb-1">
-          I'm currently a graduate student at the University of Warsaw, pursuing a master's degree in <a href="https://www.nohanet.org/masters" target="_blank" rel="noopener noreferrer">international humanitarian action</a>. I have a side business making websites and providing tech support for individuals and organizations. I also tutor standardized test preparation (ACT/SAT/GRE) and English (ESL).
-        </p><br>
-        <p class="mb-1">
-          I travel a lot internationally, and am involved in the disaster response and outdoor education space.
-        </p>
-      </div>
-      <div id="note-manifesto">
-        <div class="minimal-section-title">My Philosophy</div>
-        <p id="manifesto-intro" class="mb-1">
-          I make free apps and websites that pique my curiosity.
-        </p>
-        <p class="mb-1">
-          <strong>Everything I build is a gift</strong>: no ads, no
-          subscriptions, and no locked features.
-        </p>
+    /* Header */
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
+    .theme {
+      background: none; border: 1px solid var(--line); color: var(--muted);
+      width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: grid; place-items: center;
+    }
+    .theme:hover { color: var(--text); }
+    .hero { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
+    .hero img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); }
+    h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(2.3rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -.025em; margin: 0 0 1rem; }
+    h1 span { color: var(--accent); }
+    .hero p { margin: 0 0 .9rem; max-width: 56ch; }
+    .hero .muted { color: var(--muted); }
+    .facts { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: 1.2rem; }
+    .facts span::before { content: "· "; color: var(--accent); }
+    .facts span:first-child::before { content: ""; }
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero img { width: 96px; height: 96px; order: -1; }
+    }
 
-        <p id="manifesto-support" class="mb-1">
-          If you enjoy using something I've made, and want to support
-          development, you can show your appreciation here:
-          <br /><br /><a
-            href="https://ko-fi.com/scheerapps"
-            target="_blank"
-            rel="noopener"
-            title="Support me on Ko-fi"
-          >
-            <img
-              class="ko-fi-img"
-              src="https://storage.ko-fi.com/cdn/kofi5.png?v=6"
-              alt="Buy Me a Coffee at ko-fi.com"
-            />
-          </a>
-        </p>
-      </div>
+    /* Tutoring callout */
+    .callout {
+      margin-top: 2.5rem; padding: 1.1rem 1.3rem; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+      border-radius: 10px; background: var(--card);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .callout strong { font-weight: 600; }
+    .callout a { font-weight: 500; white-space: nowrap; }
 
-<div id="note-apps">
-  <div class="minimal-section-title">Apps I've Built</div>
+    /* Sections */
+    section { margin-top: 4.5rem; }
+    .sec-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.4rem; gap: 1rem; }
+    h2 { font-family: var(--serif); font-weight: 700; font-size: 1.75rem; letter-spacing: -.03em; margin: 0; }
 
-  <div class="apps-scroll">
-    <ul id="apps-list" class="apps-row"></ul>
-  </div>
-</div>
+    /* Apps */
+    .apps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.4rem 1rem; }
+    .app { text-decoration: none; }
+    .app .screen {
+      aspect-ratio: 9/19.5; border-radius: 22px; overflow: hidden; background: var(--hover);
+      border: 5px solid var(--text); transition: transform .2s;
+    }
+    .app:hover .screen { transform: translateY(-4px); }
+    .app video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .app strong { display: block; font-weight: 600; margin-top: .7rem; font-size: .93rem; line-height: 1.3; }
+    .app span { display: block; color: var(--muted); font-size: .82rem; line-height: 1.4; margin-top: .2rem; }
+    .app:hover strong { color: var(--accent); }
+    @media (max-width: 760px) { .apps { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 480px) { .apps { grid-template-columns: repeat(2, 1fr); } }
 
-      <div id="note-main">
-        <div class="minimal-section-title">My Web Projects</div>
-        <ul id="projects-list-top" class="minimal-list"></ul>
-        <div id="projects-list-more" style="display: none">
-          <ul id="projects-list-hidden" class="minimal-list"></ul>
-        </div>
-        <button id="more-projects-button">Show All Projects</button>
-      </div>
+    /* Projects */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .proj {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+      padding: 0; text-align: left; color: inherit; font: inherit; cursor: pointer;
+      display: flex; flex-direction: column; transition: transform .2s, border-color .2s;
+    }
+    .proj:hover, .proj:focus-visible { transform: translateY(-3px); border-color: var(--muted); outline: none; }
+    .proj:hover h3 { color: var(--accent); }
+    .proj .thumb { aspect-ratio: 16/10; background: var(--hover); border-bottom: 1px solid var(--line); overflow: hidden; }
+    .proj video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .proj .body { padding: .85rem 1rem 1rem; }
+    .proj .meta { display: flex; justify-content: space-between; gap: .5rem; }
+    .proj h3 { font-size: 1rem; font-weight: 600; margin: .25rem 0 .2rem; line-height: 1.3; }
+    .proj p {
+      margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.45;
+      display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .proj[hidden] { display: none; }
+    @media (max-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+    .more {
+      display: block; margin: 1.5rem auto 0; background: none; border: 1px solid var(--line); color: var(--text);
+      font: inherit; padding: .55rem 1.2rem; border-radius: 999px; cursor: pointer;
+    }
+    .more:hover { border-color: var(--accent); color: var(--accent); }
 
-      
+    /* Gift note */
+    .gift {
+      margin-top: 4.5rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center;
+    }
+    .gift p { margin: 0; font-family: var(--serif); font-weight: 500; font-size: 1.35rem; letter-spacing: -.015em; line-height: 1.35; max-width: 34ch; }
+    .gift p em { color: var(--accent); font-style: normal; }
+    .gift a {
+      text-decoration: none; border: 1px solid var(--text); padding: .6rem 1.1rem; border-radius: 999px; white-space: nowrap;
+    }
+    .gift a:hover { background: var(--text); color: var(--bg); }
+    @media (max-width: 640px) { .gift { grid-template-columns: 1fr; } }
 
-      <hr />
-      <footer class="mt-12 text-center">
-        <div class="social-links">
-          <a
-            href="https://www.linkedin.com/in/kyletscheer/"
-            target="_blank"
-            rel="noopener"
-            title="LinkedIn"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a
-            href="https://github.com/kyletscheer"
-            target="_blank"
-            rel="noopener"
-            title="GitHub"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://kyletscheer.medium.com/"
-            target="_blank"
-            rel="noopener"
-            title="Medium"
-            ><i class="fab fa-medium"></i
-          ></a>
-          <a
-            href="https://www.producthunt.com/@scheerapps"
-            target="_blank"
-            rel="noopener"
-            title="Product Hunt"
-            ><i class="fab fa-product-hunt"></i
-          ></a>
-        </div>
-<br>
-        <p class="mb-2">
-          <a
-            href="https://ko-fi.com/scheerapps"
-            target="_blank"
-            rel="noopener"
-            title="Support me on Ko-fi"
-          >
-            <img
-              height="36"
-              class="ko-fi-img"
-              src="https://storage.ko-fi.com/cdn/kofi5.png?v=6"
-              alt="Buy Me a Coffee at ko-fi.com"
-            />
-          </a>
-        </p>
-<br>
-        <p class="text-xs">
-          <a
-            href="https://github.com/kyletscheer/kyletscheer.github.io"
-            target="_blank"
-            rel="noopener"
-            class="footer-view-code-btn minimal-link"
-            title="View the source code for this website on GitHub"
-          >
-            <i class="fab fa-github"></i> View Code on GitHub
-          </a>
-          <br /><br />
-          Contact me at - hi [at] kylescheer [dot] com.
-        </p>
-        <p id="footer-copy" class="text-xs mt-2">&copy; 2025 Kyle Scheer</p>
-      </footer>
+    /* Footer */
+    footer { margin-top: 2.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .9rem; }
+    footer nav { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+
+    /* Dialog */
+    dialog {
+      width: min(880px, 100% - 2rem); padding: 0; border: 1px solid var(--line); border-radius: 14px;
+      background: var(--card); color: var(--text);
+    }
+    dialog::backdrop { background: rgba(0, 0, 0, .55); }
+    dialog video { width: 100%; display: block; background: #000; max-height: 68vh; }
+    .dlg-info { padding: 1.3rem 1.5rem 1.5rem; }
+    .dlg-info h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.02em; font-size: 1.6rem; margin: .2rem 0 .4rem; line-height: 1.15; }
+    .dlg-info p { margin: 0 0 1.2rem; color: var(--muted); }
+    .actions { display: flex; justify-content: space-between; align-items: center; }
+    .actions a { background: var(--accent); color: var(--bg); text-decoration: none; padding: .55rem 1.1rem; border-radius: 999px; font-weight: 500; }
+    .actions a:hover { color: var(--bg); opacity: .9; }
+    .actions button { background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <span class="label">kylescheer.com</span>
+      <button class="theme" id="themeBtn" aria-label="Toggle dark mode">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
     </div>
-<script src="script.js"></script>
 
-  </body>
+    <header class="hero">
+      <div>
+        <h1>Hi, I'm Kyle<span>.</span></h1>
+        <p>
+          I'm a grad student based in Warsaw in <a href="https://www.nohanet.org/masters" target="_blank" rel="noopener">international humanitarian action</a>
+          with a background in disaster response and international development. On the side, I make small apps and web tools.
+        </p>
+        <p class="muted">Most of them started as a problem I had: boring runs, currency math at a market, a phone that eats my attention.</p>
+        
+      </div>
+      <img src="images/kyle.webp" alt="Kyle Scheer" />
+    </header>
+
+    <div class="callout">
+      <span><strong>Tutoring:</strong> SAT, ACT and GRE prep, one-on-one in Warsaw or online.</span>
+      <a href="tutoring.html">Learn more →</a>
+    </div>
+
+    <section id="app-section">
+      <div class="sec-head">
+        <h2>iPhone apps</h2>
+        <span class="label" id="appCount"></span>
+      </div>
+      <div class="apps" id="apps"></div>
+    </section>
+
+    <section id="project-section">
+      <div class="sec-head">
+        <h2>Web projects</h2>
+        <span class="label" id="projCount"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <button class="more" id="more"></button>
+    </section>
+
+    <div class="gift">
+      <p>All my projects are free, with <em>no ads, subscriptions or locked features.</em></p>
+      <a href="https://ko-fi.com/scheerapps" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+    </div>
+
+    <footer>
+      <nav>
+        <a href="mailto:hi@kylescheer.com">Email</a>
+        <a href="https://github.com/kyletscheer" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/kyletscheer/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://kyletscheer.medium.com/" target="_blank" rel="noopener">Medium</a>
+        <a href="https://www.producthunt.com/@scheerapps" target="_blank" rel="noopener">Product Hunt</a>
+      </nav>
+      <span>© <span id="yr"></span> Kyle Scheer · <a href="privacy-policy.html">Privacy</a></span>
+    </footer>
+  </main>
+
+  <dialog id="dlg">
+    <div id="dlgMedia"></div>
+    <div class="dlg-info">
+      <span class="label" id="dlgDate"></span>
+      <h3 id="dlgTitle"></h3>
+      <p id="dlgDesc"></p>
+      <div class="actions">
+        <a id="dlgLink" target="_blank" rel="noopener">Open project ↗</a>
+        <button id="dlgClose">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const data = window.portfolioData;
+      if (!data) return;
+      const $ = (s) => document.querySelector(s);
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+      const strip = (h) => { const d = document.createElement("div"); d.innerHTML = h; return d.textContent; };
+
+      // Theme
+      const root = document.documentElement;
+      let saved = null;
+      try { saved = localStorage.getItem("ks-theme"); } catch (e) {}
+      root.dataset.theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      $("#themeBtn").onclick = () => {
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+        try { localStorage.setItem("ks-theme", root.dataset.theme); } catch (e) {}
+      };
+      $("#yr").textContent = new Date().getFullYear();
+
+      // Videos load and play only while visible
+      const io = new IntersectionObserver((entries) => entries.forEach(({ target: v, isIntersecting }) => {
+        if (isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); }
+        else if (v.src) v.pause();
+      }), { rootMargin: "150px" });
+      const vid = (src) => `<video muted loop playsinline preload="none" data-src="${esc(src)}"></video>`;
+
+      // Apps
+      const shortName = (t) => t.replace(/\s*\(iOS\)\s*$/, "").replace(/\s+-\s+.*$/, "").replace(/\s+App$/, "");
+      $("#appCount").textContent = `${data.apps.length} apps · all free`;
+      $("#apps").innerHTML = data.apps.map((a) => `
+        <a class="app" href="${esc(a.link)}">
+          <div class="screen">${vid(a.imageURL)}</div>
+          <strong>${esc(shortName(a.title))}</strong>
+          <span>${esc(a.description)}</span>
+        </a>`).join("");
+
+      // Projects, newest first
+      const M = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, June: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+      const when = (s) => { const m = (s || "").match(/([A-Za-z]+),?\s*(\d{4})/); return m ? +m[2] * 12 + (M[m[1]] ?? 0) : 0; };
+      const projects = [...data.webProjects].sort((a, b) => when(b.date) - when(a.date));
+      const year = (s) => ((s || "").match(/\d{4}/) || [""])[0];
+      const oldest = Math.min(...projects.map((p) => +year(p.date) || 9999));
+      $("#projCount").textContent = `${projects.length} projects since ${oldest}`;
+
+      const LIMIT = 6;
+      $("#grid").innerHTML = projects.map((p, i) => `
+        <button class="proj" data-i="${i}"${i >= LIMIT ? " hidden" : ""}>
+          <div class="thumb">${vid(p.screenshotURL)}</div>
+          <div class="body">
+            <div class="meta label"><span>${esc(year(p.date))}</span></div>
+            <h3>${esc(p.title.replace(/\s+-\s+.*$/, ""))}</h3>
+            <p>${esc(strip(p.description))}</p>
+          </div>
+        </button>`).join("");
+      document.querySelectorAll("video[data-src]").forEach((v) => io.observe(v));
+
+      const more = $("#more");
+      more.textContent = `Show all ${projects.length}`;
+      more.onclick = () => {
+        document.querySelectorAll(".proj[hidden]").forEach((el) => (el.hidden = false));
+        more.remove();
+      };
+
+      // Preview dialog
+      const dlg = $("#dlg");
+      $("#grid").onclick = (e) => {
+        const card = e.target.closest(".proj"); if (!card) return;
+        const p = projects[+card.dataset.i];
+        $("#dlgMedia").innerHTML = `<video controls autoplay muted loop playsinline src="${esc(p.screenshotURL)}"></video>`;
+        $("#dlgDate").textContent = p.date || "";
+        $("#dlgTitle").textContent = p.title;
+        $("#dlgDesc").innerHTML = p.description; // author-written data
+        $("#dlgLink").href = p.link;
+        dlg.showModal();
+      };
+      $("#dlgClose").onclick = () => dlg.close();
+      dlg.onclick = (e) => { if (e.target === dlg) dlg.close(); };
+      dlg.onclose = () => { $("#dlgMedia").innerHTML = ""; };
+    })();
+  </script>
+</body>
 </html>
