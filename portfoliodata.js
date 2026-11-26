@@ -72,6 +72,14 @@ window.portfolioData = {
   // Note: I standardized the structure to include an optional 'date' for sorting/display.
   webProjects: [
     {
+      title: "Spillover - Where Should Your Next Dollar Go?",
+      date: "Nov, 2026",
+      description:
+        "Enter your real balances and get a step-by-step money plan based on the r/personalfinance Prime Directive. Everything stays in your browser.",
+      link: "https://kylescheer.com/spillover",
+      screenshotURL: "images/spillover_new.mp4",
+    },
+    {
       title: "Random Walk Laboratory",
       date: "Nov, 2026",
       description:
@@ -91,7 +99,7 @@ window.portfolioData = {
       title: "Unit Sharp",
       date: "May, 2026",
       description:
-        "The same as ConvertQuest, with a better name and a sharper design. Mobile-first. Convert measurements game (length, temp, mass, etc...) to improve your mental math.",
+        "A mobile-first game for converting measurements (length, temperature, mass and more) to sharpen your mental math.",
       link: "https://www.kylescheer.com/unit-sharp",
       screenshotURL: "images/unitsharp_new.mp4",
     },
@@ -134,14 +142,6 @@ window.portfolioData = {
         "Prepare for travel abroad with this currency conversion game. Improve your mental math.",
       link: "https://www.kylescheer.com/travel-cents",
       screenshotURL: "images/travelcents_new.mp4",
-    },
-    {
-      title: "ConvertQuest - Conversion Game",
-      date: "Feb, 2025",
-      description:
-        "Convert measurements game (length, temp, mass, etc...) to improve your mental math.",
-      link: "https://www.kylescheer.com/conversion-game",
-      screenshotURL: "images/conversion-game_new.mp4",
     },
     {
       title: "Liars Dice Probability Calculator",
@@ -227,13 +227,6 @@ window.portfolioData = {
       description: "Some random tools where I play with letters and words.",
       link: "https://www.kylescheer.com/letters",
       screenshotURL: "images/letters_new.mp4",
-    },
-    {
-      title: "Automate Your Finances",
-      date: "Mar, 2021",
-      description: "A simpler way to handle your money.",
-      link: "https://www.kylescheer.com/bucket_finance",
-      screenshotURL: "images/bucketfinance_new.mp4",
     },
     {
       title: "270 Game Guide",
