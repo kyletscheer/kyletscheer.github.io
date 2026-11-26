@@ -25,6 +25,7 @@
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html,body{height:100%}
+html{overflow-x:clip}main{overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Archivo,system-ui,sans-serif;overflow-x:clip}
 .scene{position:fixed;inset:auto 0 0 0;height:38vh;pointer-events:none;z-index:0}
 .scene svg{width:100%;height:100%;display:block}
@@ -251,18 +252,14 @@ body.tv .q,body.tv .who b,body.tv .who small{text-shadow:calc(5px*var(--tv)) 0 c
 
 <section class="screen on" id="intro">
 <h1>Kessara Delta: Response</h1>
-<p>Monsoon floods have displaced 300,000 people across the Kessara Delta. You are country director of a small aid agency, with 120 days of funding and a team that lost homes too.</p>
-<p>Every day someone brings you a decision, and most have no clean answer. The bar at the top shows <b>how much of people’s need you are meeting</b> across water, shelter, health, food and protection. Tap it to see each one. It slips every day you don’t act.</p>
-<div class="legend" id="legend"></div>
-
-<div class="setg" role="group" aria-label="How you play"><span>How you play</span><button data-set="guided:true">Guided<small>See what each choice affects</small></button><button data-set="guided:false">Field conditions<small>Decide without knowing</small></button></div>
+<p>Monsoon floods have displaced 300,000 people. You run a small aid agency for 120 days. Every day, someone brings you a decision.</p>
+<div class="setg" role="group" aria-label="How you play"><span>How you play</span><button data-set="guided:true">Guided<small>See what choices affect</small></button><button data-set="guided:false">Field conditions<small>Decide without knowing</small></button></div>
 <div class="setg" role="group" aria-label="Animations"><span>Animations</span><button data-set="motion:true">Full</button><button data-set="motion:false">Reduced</button></div>
 <button class="btn" id="start">Take the call</button>
 <button id="skipb" hidden style="width:100%;margin-top:10px">Start without the briefing</button>
 <p class="hint" id="best"></p>
 <p class="warn-note" role="note"><b>Warning:</b> this simulation includes mentions of death, sexual exploitation and violence.</p>
-<p class="note">A fictional scenario. People and places are invented. The dilemmas and figures follow real humanitarian practice and the Sphere minimum standards.</p>
-<p class="note credit">Made by Kyle Scheer · v22, November 2026. An independent educational project, not endorsed by Sphere, the IASC or any agency or standard mentioned. Kessara is fictional; its people and places are a deliberate composite. Inspired by <a href="https://www.reignsgame.com/reigns" target="_blank" rel="noopener">Reigns</a>.</p>
+<p class="note credit">A fictional scenario by Kyle Scheer · v23. Not endorsed by Sphere, the IASC or any agency mentioned. Inspired by <a href="https://www.reignsgame.com/reigns" target="_blank" rel="noopener">Reigns</a>.</p>
 </section>
 
 <section class="screen" id="game">
@@ -864,7 +861,7 @@ const FATES=[
 const $=id=>document.getElementById(id);
 let S,cur,busy,dx,drag,lean,auto,toasts=[],toasting=false;
 let best=0;try{best=+localStorage.getItem('kd3-best')||0}catch(e){}
-$('legend').innerHTML=MN.map((x,i)=>`<div>${svgI(i)}<span><b>${x}</b><br>${MD[i]}</span></div>`).join('');
+if($('legend'))$('legend').innerHTML=MN.map((x,i)=>`<div>${svgI(i)}<span><b>${x}</b><br>${MD[i]}</span></div>`).join('');
 const showBest=()=>{$('best').textContent=best?`Best run: ${best} days`:''};showBest();
 $('meters').innerHTML=MN.map((x,i)=>`<div class="m" id="m${i}"><i class="dot" id="d${i}"></i><div class="gauge"><svg class="base" viewBox="0 0 48 48">${ICON[i]}</svg><div class="fill" id="f${i}"><svg viewBox="0 0 48 48" style="width:100%;height:100%">${ICON[i]}</svg></div></div><span>${x}</span></div>`).join('');
 $('secs').innerHTML=SECN.map((x,i)=>`<div class="sr" id="sr${i}"><span>${x}</span><div class="sb"><i id="sf${i}"></i></div><b id="sv${i}"></b></div>`).join('');
